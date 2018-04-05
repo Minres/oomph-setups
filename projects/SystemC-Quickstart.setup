@@ -132,14 +132,6 @@
     <requirement
         name="de.marw.cdt.cmake.feature.group"/>
     <repository
-        url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
-    <repository
-        url="http://download.eclipse.org/releases/oxygen"/>
-    <repository
-        url="http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/"/>
-    <repository
-        url="http://www.janua.fr/update/"/>
-    <repository
         url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
     <repository
         url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>

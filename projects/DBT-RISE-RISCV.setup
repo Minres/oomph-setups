@@ -1,131 +1,199 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<setup:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
-	xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
-	xmlns:setup="http://www.eclipse.org/oomph/setup/1.0" xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
-	xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/projects/1.0 index:/models/Projects.ecore"
-	name="dbt_rise_riscv" label="DBT-RISE RISCV">
-	<setupTask xsi:type="setup:CompoundTask" name="Global Variables">
-		<setupTask xsi:type="setup:VariableTask" name="github.user.id"
-			defaultValue="anonymous" label="Github user ID">
-			<description>The user ID of the Github account</description>
-		</setupTask>
-		<setupTask xsi:type="setup:VariableTask" name="github.author.name"
-			label="Github author name">
-			<description>The author name used for Github commits</description>
-		</setupTask>
-		<setupTask xsi:type="setup:VariableTask" name="github.author.email"
-			label="Github author email">
-			<description>The email address associated with Github commits
-			</description>
-		</setupTask>
-		<setupTask xsi:type="setup:VariableTask" type="PASSWORD"
-			name="github.user.password" label="Github password for issues">
-			<annotation
-				source="http://www.eclipse.org/oomph/setup/PasswordVerificationDisabled">
-				<detail key="type">
-					<value>form</value>
-				</detail>
-				<detail key="form.url">
-					<value>https://github.com/session</value>
-				</detail>
-				<detail key="form.cookie">
-					<value>PHPSESSID</value>
-				</detail>
-				<detail key="form.parameters">
-					<value>login password authenticity_token utf8 commit</value>
-				</detail>
-				<detail key="form.secure.parameters">
-					<value>password</value>
-				</detail>
-				<detail key="form.filter">
-					<value>login=anonymous\&amp;.*</value>
-				</detail>
-				<detail key="form.parameter.login">
-					<value>$${github.user.id}</value>
-				</detail>
-				<detail key="form.parameter.password">
-					<value>$${value}</value>
-				</detail>
-				<detail key="form.parameter.utf8">
-					<value>✓</value>
-				</detail>
-				<detail key="form.parameter.commit">
-					<value>Sign in</value>
-				</detail>
-				<detail key="form.ok">
-					<value>Valid password for $${form.parameter.login} at $${form.url}.
-					</value>
-				</detail>
-				<detail key="form.info">
-					<value>Validate the password for $${form.parameter.login} at
-						$${form.url}.</value>
-				</detail>
-				<detail key="form.warning">
-					<value>Unable to validate the password for $${form.parameter.login}
-						because $${form.url} is unreachable.</value>
-				</detail>
-				<detail key="form.error">
-					<value>Invalid password for $${form.parameter.login} at
-						$${form.url}.</value>
-				</detail>
-			</annotation>
-		</setupTask>
-		<setupTask xsi:type="setup:VariableTask" name="github.remoteURIs"
-			label="Github repository">
-			<choice value="git@github.com:@{remoteURI}.git" label="Git (read-write)" />
-			<choice
-				value="https://${github.user.id|username}@github.com/@{remoteURI}.git"
-				label="HTTPS (read-write)">
-				<annotation source="http://www.eclipse.org/oomph/setup/MatchChoice" />
-			</choice>
-			<choice value="https://github.com/@{remoteURI}.git" label="HTTPS (read-only, anonymous)" />
-			<description>Choose from the available Github URIs</description>
-		</setupTask>
-	</setupTask>
-	<setupTask xsi:type="setup:EclipseIniTask" option="-Xmx"
-		value="2G" vm="true">
-		<description>Set the heap space needed to work with the projects of
-			${scope.project.label}</description>
-	</setupTask>
-	<setupTask xsi:type="setup.p2:P2Task">
-		<requirement name="org.eclipse.cdt.feature.group" />
-		<requirement name="com.cthing.cmakeed.feature.feature.group" />
-		<requirement name="org.eclipse.wst.jsdt.feature.feature.group" />
-		<requirement name="org.eclipse.wst.xml_ui.feature.feature.group" />
-		<repository
-			url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/" />
-		<repository
-			url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/" />
-		<description>Install the tools needed in the IDE to work with the
-			source code for ${scope.project.label}</description>
-	</setupTask>
-	<setupTask xsi:type="git:GitCloneTask" id="git.clone.dbt_rise_riscv"
-		remoteURI="Minres/DBT-RISE-RISCV">
-		<annotation source="http://www.eclipse.org/oomph/setup/InducedChoices">
-			<detail key="inherit">
-				<value>github.remoteURIs</value>
-			</detail>
-			<detail key="label">
-				<value>${scope.project.label} Git repository</value>
-			</detail>
-			<detail key="target">
-				<value>remoteURI</value>
-			</detail>
-		</annotation>
-		<description>${scope.project.label}</description>
-	</setupTask>
-	<setupTask xsi:type="projects:ProjectsImportTask">
-		<sourceLocator rootFolder="${git.clone.dbt_rise_riscv.location}" />
-	</setupTask>
-	<stream name="master">
-		<setupTask xsi:type="setup:EclipseIniTask" option="-Doomph.redirection.dbt_rise_riscv"
-			value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//DBT-RISE-RISCV.setup->${git.clone.dbt_rise_riscv.location|uri}//DBT-RISE-RISCV.setup"
-			vm="true">
-			<description>Set an Oomph redirection system property to redirect the
-				logical location of this setup to its physical location in the Git
-				clone.</description>
-		</setupTask>
-	</stream>
-	<description>An instruction set simulator based on DBT-RISE implementing the RISC-V ISA.</description>
+<setup:Project
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:git="http://www.eclipse.org/oomph/setup/git/1.0"
+    xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
+    xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
+    xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore"
+    name="dbt_rise_riscv"
+    label="DBT-RISE RISCV">
+  <setupTask
+      xsi:type="setup:CompoundTask"
+      name="Global Variables">
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="github.user.id"
+        defaultValue="anonymous"
+        label="Github user ID">
+      <description>The user ID of the Github account</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="github.author.name"
+        label="Github author name">
+      <description>The author name used for Github commits</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="github.author.email"
+        label="Github author email">
+      <description>The email address associated with Github commits</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        type="PASSWORD"
+        name="github.user.password"
+        label="Github password for issues">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/PasswordVerificationDisabled">
+        <detail
+            key="type">
+          <value>form</value>
+        </detail>
+        <detail
+            key="form.url">
+          <value>https://github.com/session</value>
+        </detail>
+        <detail
+            key="form.cookie">
+          <value>PHPSESSID</value>
+        </detail>
+        <detail
+            key="form.parameters">
+          <value>login password authenticity_token utf8 commit</value>
+        </detail>
+        <detail
+            key="form.secure.parameters">
+          <value>password</value>
+        </detail>
+        <detail
+            key="form.filter">
+          <value>login=anonymous\&amp;.*</value>
+        </detail>
+        <detail
+            key="form.parameter.login">
+          <value>$${github.user.id}</value>
+        </detail>
+        <detail
+            key="form.parameter.password">
+          <value>$${value}</value>
+        </detail>
+        <detail
+            key="form.parameter.utf8">
+          <value>✓</value>
+        </detail>
+        <detail
+            key="form.parameter.commit">
+          <value>Sign in</value>
+        </detail>
+        <detail
+            key="form.ok">
+          <value>Valid password for $${form.parameter.login} at $${form.url}.</value>
+        </detail>
+        <detail
+            key="form.info">
+          <value>
+            Validate the password for $${form.parameter.login} at
+            $${form.url}.
+          </value>
+        </detail>
+        <detail
+            key="form.warning">
+          <value>
+            Unable to validate the password for $${form.parameter.login}
+            because $${form.url} is unreachable.
+          </value>
+        </detail>
+        <detail
+            key="form.error">
+          <value>
+            Invalid password for $${form.parameter.login} at
+            $${form.url}.
+          </value>
+        </detail>
+      </annotation>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="github.remoteURIs"
+        label="Github repository">
+      <choice
+          value="git@github.com:@{remoteURI}.git"
+          label="Git (read-write)"/>
+      <choice
+          value="https://${github.user.id|username}@github.com/@{remoteURI}.git"
+          label="HTTPS (read-write)">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/MatchChoice"/>
+      </choice>
+      <choice
+          value="https://github.com/@{remoteURI}.git"
+          label="HTTPS (read-only, anonymous)"/>
+      <description>Choose from the available Github URIs</description>
+    </setupTask>
+  </setupTask>
+  <setupTask
+      xsi:type="setup:EclipseIniTask"
+      option="-Xmx"
+      value="2G"
+      vm="true">
+    <description>
+      Set the heap space needed to work with the projects of
+      ${scope.project.label}
+    </description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.p2:P2Task">
+    <requirement
+        name="org.eclipse.cdt.feature.group"/>
+    <requirement
+        name="com.cthing.cmakeed.feature.feature.group"/>
+    <requirement
+        name="de.marw.cdt.cmake.feature.group"/>
+    <requirement
+        name="org.eclipse.wst.jsdt.feature.feature.group"/>
+    <requirement
+        name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+    <repository
+        url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
+    <repository
+        url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
+    <description>
+      Install the tools needed in the IDE to work with the
+      source code for ${scope.project.label}
+    </description>
+  </setupTask>
+  <setupTask
+      xsi:type="git:GitCloneTask"
+      id="git.clone.dbt_rise_riscv"
+      remoteURI="Minres/DBT-RISE-RISCV">
+    <annotation
+        source="http://www.eclipse.org/oomph/setup/InducedChoices">
+      <detail
+          key="inherit">
+        <value>github.remoteURIs</value>
+      </detail>
+      <detail
+          key="label">
+        <value>${scope.project.label} Git repository</value>
+      </detail>
+      <detail
+          key="target">
+        <value>remoteURI</value>
+      </detail>
+    </annotation>
+    <description>${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="projects:ProjectsImportTask">
+    <sourceLocator
+        rootFolder="${git.clone.dbt_rise_riscv.location}"/>
+  </setupTask>
+  <stream name="master">
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Doomph.redirection.dbt_rise_riscv"
+        value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//DBT-RISE-RISCV.setup->${git.clone.dbt_rise_riscv.location|uri}//DBT-RISE-RISCV.setup"
+        vm="true">
+      <description>
+        Set an Oomph redirection system property to redirect the
+        logical location of this setup to its physical location in the Git
+        clone.
+      </description>
+    </setupTask>
+  </stream>
+  <description>An instruction set simulator based on DBT-RISE implementing the RISC-V ISA.</description>
 </setup:Project>
