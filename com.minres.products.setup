@@ -269,6 +269,12 @@
             filter="(osgi.os=linux)"/>
         <requirement
             name="com.eclipserunner.feature.feature.group"/>
+        <requirement
+            name="net.resheim.eclipse.launcher.feature.group"
+            filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
+        <requirement
+            name="name.njbartlett.eclipse.macbadge.feature.feature.group"
+            filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
         <repository
@@ -283,6 +289,10 @@
             url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+        <repository
+            url="http://macbadge-updates.s3.amazonaws.com/"/>
       </setupTask>
       <setupTask
           xsi:type="setup:EclipseIniTask"
@@ -653,6 +663,12 @@
             filter="(osgi.os=linux)"/>
         <requirement
             name="com.eclipserunner.feature.feature.group"/>
+        <requirement
+            name="net.resheim.eclipse.launcher.feature.group"
+            filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
+        <requirement
+            name="name.njbartlett.eclipse.macbadge.feature.feature.group"
+            filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/photon"/>
         <repository
@@ -667,6 +683,10 @@
             url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+        <repository
+            url="http://macbadge-updates.s3.amazonaws.com/"/>
       </setupTask>
       <setupTask
           xsi:type="setup:EclipseIniTask"
@@ -968,12 +988,26 @@
             name="org.codehaus.groovy.headless.feature.feature.group"/>
         <requirement
             name="org.codehaus.groovy.m2eclipse.feature.feature.group"/>
+        <requirement
+            name="com.eclipserunner.feature.feature.group"/>
+        <requirement
+            name="net.resheim.eclipse.launcher.feature.group"
+            filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
+        <requirement
+            name="name.njbartlett.eclipse.macbadge.feature.feature.group"
+            filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
         <repository
             url="http://download.eclipse.org/releases/oxygen"/>
         <repository
             url="http://dist.springsource.org/snapshot/GRECLIPSE/e4.7/"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+        <repository
+            url="http://macbadge-updates.s3.amazonaws.com/"/>
       </setupTask>
     </version>
     <version
@@ -1035,12 +1069,26 @@
             name="org.codehaus.groovy.headless.feature.feature.group"/>
         <requirement
             name="org.codehaus.groovy.m2eclipse.feature.feature.group"/>
+        <requirement
+            name="com.eclipserunner.feature.feature.group"/>
+        <requirement
+            name="net.resheim.eclipse.launcher.feature.group"
+            filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
+        <requirement
+            name="name.njbartlett.eclipse.macbadge.feature.feature.group"
+            filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/photon"/>
         <repository
             url="http://download.eclipse.org/releases/photon"/>
         <repository
             url="http://dist.springsource.org/snapshot/GRECLIPSE/e4.8/"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+        <repository
+            url="http://macbadge-updates.s3.amazonaws.com/"/>
       </setupTask>
     </version>
     <description>The essential tools for Java and DSL developers, including a Java &amp; Xtend IDE, a DSL Framework (Xtext), a Git client, XML Editor, and Maven integration.</description>
