@@ -14,194 +14,195 @@
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="JIT.ISS.CoreDsl"
     label="JIT ISS CoreDsl">
-  <setupTask
-      xsi:type="setup:CompoundTask"
-      name="Global Variables">
     <setupTask
-        xsi:type="setup:VariableTask"
-        name="minres.git.user.id"
-        defaultValue="anonymous"
-        label="Github user ID">
-      <description>The user ID of the Github account</description>
+        xsi:type="setup:CompoundTask"
+        name="Global Variables">
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="minres.git.user.id"
+          defaultValue="anonymous"
+          label="Github user ID">
+        <description>The user ID of the Github account</description>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="minres.git.author.name"
+          label="Github author name">
+        <description>The author name used for Github commits</description>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="minres.git.author.email"
+          label="Github author email">
+        <description>The email address associated with Github commits</description>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          type="PASSWORD"
+          name="minres.git.user.password"
+          label="Github password for issues">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/PasswordVerificationDisabled">
+          <detail
+              key="type">
+            <value>form</value>
+          </detail>
+          <detail
+              key="form.url">
+            <value>https://github.com/session</value>
+          </detail>
+          <detail
+              key="form.cookie">
+            <value>PHPSESSID</value>
+          </detail>
+          <detail
+              key="form.parameters">
+            <value>login password authenticity_token utf8 commit</value>
+          </detail>
+          <detail
+              key="form.secure.parameters">
+            <value>password</value>
+          </detail>
+          <detail
+              key="form.filter">
+            <value>login=anonymous\&amp;.*</value>
+          </detail>
+          <detail
+              key="form.parameter.login">
+            <value>$${github.user.id}</value>
+          </detail>
+          <detail
+              key="form.parameter.password">
+            <value>$${value}</value>
+          </detail>
+          <detail
+              key="form.parameter.utf8">
+            <value>✓</value>
+          </detail>
+          <detail
+              key="form.parameter.commit">
+            <value>Sign in</value>
+          </detail>
+          <detail
+              key="form.ok">
+            <value>Valid password for $${form.parameter.login} at $${form.url}.</value>
+          </detail>
+          <detail
+              key="form.info">
+            <value>Validate the password for $${form.parameter.login} at $${form.url}.</value>
+          </detail>
+          <detail
+              key="form.warning">
+            <value>Unable to validate the password for $${form.parameter.login} because $${form.url} is unreachable.</value>
+          </detail>
+          <detail
+              key="form.error">
+            <value>Invalid password for $${form.parameter.login} at $${form.url}.</value>
+          </detail>
+        </annotation>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="minres.git.remoteURIs"
+          label="MINRES Git repository">
+        <choice
+            value="https://minres.com/git/@{remoteURI}.git"
+            label="HTTPS"/>
+        <description>Choose from the available Git URIs</description>
+      </setupTask>
     </setupTask>
     <setupTask
-        xsi:type="setup:VariableTask"
-        name="minres.git.author.name"
-        label="Github author name">
-      <description>The author name used for Github commits</description>
+        xsi:type="jdt:JRETask"
+        version="JavaSE-1.8"
+        location="${jre.location-1.8}">
+      <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
     </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        name="minres.git.author.email"
-        label="Github author email">
-      <description>The email address associated with Github commits</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        type="PASSWORD"
-        name="minres.git.user.password"
-        label="Github password for issues">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/PasswordVerificationDisabled">
-        <detail
-            key="type">
-          <value>form</value>
-        </detail>
-        <detail
-            key="form.url">
-          <value>https://github.com/session</value>
-        </detail>
-        <detail
-            key="form.cookie">
-          <value>PHPSESSID</value>
-        </detail>
-        <detail
-            key="form.parameters">
-          <value>login password authenticity_token utf8 commit</value>
-        </detail>
-        <detail
-            key="form.secure.parameters">
-          <value>password</value>
-        </detail>
-        <detail
-            key="form.filter">
-          <value>login=anonymous\&amp;.*</value>
-        </detail>
-        <detail
-            key="form.parameter.login">
-          <value>$${github.user.id}</value>
-        </detail>
-        <detail
-            key="form.parameter.password">
-          <value>$${value}</value>
-        </detail>
-        <detail
-            key="form.parameter.utf8">
-          <value>✓</value>
-        </detail>
-        <detail
-            key="form.parameter.commit">
-          <value>Sign in</value>
-        </detail>
-        <detail
-            key="form.ok">
-          <value>Valid password for $${form.parameter.login} at $${form.url}.</value>
-        </detail>
-        <detail
-            key="form.info">
-          <value>Validate the password for $${form.parameter.login} at $${form.url}.</value>
-        </detail>
-        <detail
-            key="form.warning">
-          <value>Unable to validate the password for $${form.parameter.login} because $${form.url} is unreachable.</value>
-        </detail>
-        <detail
-            key="form.error">
-          <value>Invalid password for $${form.parameter.login} at $${form.url}.</value>
-        </detail>
-      </annotation>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        name="minres.git.remoteURIs"
-        label="MINRES Git repository">
-      <choice
-          value="https://minres.com/git/@{remoteURI}.git"
-          label="HTTPS"/>
-      <description>Choose from the available Git URIs</description>
-    </setupTask>
-  </setupTask>
-  <setupTask
-      xsi:type="jdt:JRETask"
-      version="JavaSE-1.8"
-      location="${jre.location-1.8}">
-    <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:EclipseIniTask"
-      option="-Xmx"
-      value="1G"
-      vm="true">
-    <description>Set the heap space needed to work with the projects of ${scope.project.label}</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:ResourceCreationTask"
-      excludedTriggers="STARTUP MANUAL"
-      content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;section name=&quot;Workbench&quot;>&#xD;&#xA;&#x9;&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>&#xD;&#xA;&#x9;&lt;/section>&#xD;&#xA;&lt;/section>&#xD;&#xA;"
-      targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
-      encoding="UTF-8">
-    <description>Initialize JDT's package explorer to show working sets as its root objects</description>
-  </setupTask>
-  <setupTask
-      xsi:type="setup:VariableTask"
-      name="eclipse.target.platform"
-      value="None"
-      defaultValue="Neon"
-      storageURI="scope://Workspace"/>
-  <setupTask
-      xsi:type="setup.p2:P2Task">
-    <repository
-        url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
-    <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
-  </setupTask>
-  <setupTask
-      xsi:type="git:GitCloneTask"
-      id="git.clone.JIT.ISS.CoreDsl"
-      filter=""
-      remoteURI="SystemC/JIT-ISS-CoreDsl">
-    <annotation
-        source="http://www.eclipse.org/oomph/setup/InducedChoices">
-      <detail
-          key="inherit">
-        <value>minres.git.remoteURIs</value>
-      </detail>
-      <detail
-          key="label">
-        <value>${scope.project.label} Git repository</value>
-      </detail>
-      <detail
-          key="target">
-        <value>remoteURI</value>
-      </detail>
-    </annotation>
-    <description>${scope.project.label}</description>
-  </setupTask>
-  <setupTask
-      xsi:type="projects:ProjectsImportTask">
-    <sourceLocator
-        rootFolder="${git.clone.JIT.ISS.CoreDsl.location}"
-        locateNestedProjects="true"/>
-  </setupTask>
-  <setupTask
-      xsi:type="setup.workingsets:WorkingSetTask">
-    <workingSet
-        name="${scope.project.name}">
-      <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:RepositoryPredicate"
-            project="com.minres.coredsl"/>
-      </predicate>
-    </workingSet>
-    <description>The dynamic working sets for ${scope.project.label}</description>
-  </setupTask>
-  <setupTask
-      xsi:type="pde:TargetPlatformTask"
-      name="com.minres.coredsl.target">
-    <description>Sets the CoreDSL target platform</description>
-  </setupTask>
-  <stream name="master"
-      label="Master">
     <setupTask
         xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.JIT.ISS.CoreDsl"
-        value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//JITISSCoreDsl.setup->${git.clone.JIT.ISS.CoreDsl.location|uri}//JITISSCoreDsl.setup"
+        option="-Xmx"
+        value="1G"
         vm="true">
-      <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
+      <description>Set the heap space needed to work with the projects of ${scope.project.label}</description>
     </setupTask>
-  </stream>
-  <logicalProjectContainer
-      xsi:type="setup:ProjectCatalog"
-      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
-  <description>JIT ISS CoreDsl provides cool stuff.</description>
+    <setupTask
+        xsi:type="setup:ResourceCreationTask"
+        excludedTriggers="STARTUP MANUAL"
+        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;section name=&quot;Workbench&quot;>&#xD;&#xA;&#x9;&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>&#xD;&#xA;&#x9;&lt;/section>&#xD;&#xA;&lt;/section>&#xD;&#xA;"
+        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
+        encoding="UTF-8">
+      <description>Initialize JDT's package explorer to show working sets as its root objects</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="eclipse.target.platform"
+        value="None"
+        defaultValue="Neon"
+        storageURI="scope://Workspace"/>
+    <setupTask
+        xsi:type="setup.p2:P2Task">
+      <requirement
+          name="org.eclipse.xtext.sdk.feature.group"
+          versionRange="[2.13.0,2.99.0]"/>
+      <repository
+          url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+      <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.JIT.ISS.CoreDsl"
+        filter=""
+        remoteURI="SystemC/JIT-ISS-CoreDsl">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>minres.git.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} Git repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.JIT.ISS.CoreDsl.location}"
+          locateNestedProjects="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="${scope.project.name}">
+        <predicate
+            xsi:type="predicates:AndPredicate">
+          <operand
+              xsi:type="predicates:RepositoryPredicate"
+              project="com.minres.coredsl"/>
+        </predicate>
+      </workingSet>
+      <description>The dynamic working sets for ${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="pde:TargetPlatformTask"
+        name="com.minres.coredsl.target">
+      <description>Sets the CoreDSL target platform</description>
+    </setupTask>
+    <stream
+        name="master"
+        label="Master">
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="-Doomph.redirection.JIT.ISS.CoreDsl"
+          value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//JITISSCoreDsl.setup->${git.clone.JIT.ISS.CoreDsl.location|uri}//JITISSCoreDsl.setup"
+          vm="true">
+        <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
+      </setupTask>
+    </stream>
+    <description>A Xtext based CoreDSL editor with syntax highlighting and context sensitive help.</description>
 </setup:Project>
