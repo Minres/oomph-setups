@@ -10,9 +10,8 @@
     xmlns:projects="http://www.eclipse.org/oomph/setup/projects/1.0"
     xmlns:setup="http://www.eclipse.org/oomph/setup/1.0"
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
-    xmlns:setup.targlets="http://www.eclipse.org/oomph/setup/targlets/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
-    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/targlets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupTarglets.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
+    xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
     name="minres.projects"
     label="MINRES Projects">
   <annotation
@@ -26,90 +25,6 @@
       <value>https://github.com/</value>
     </detail>
   </annotation>
-  <setupTask
-      xsi:type="setup:CompoundTask"
-      name="Global Variables">
-    <setupTask
-        xsi:type="setup:VariableTask"
-        name="eclipse.target.platform"
-        defaultValue="Oxygen"
-        storageURI="scope://Workspace"
-        label="Target Platform">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      <choice
-          value="Oxygen"
-          label="Eclipse Oxygen - 4.7"/>
-      <choice
-          value="Neon"
-          label="Eclipse Neon - 4.6"/>
-      <choice
-          value="Mars"
-          label="Eclipse Mars - 4.5"/>
-      <choice
-          value="Luna"
-          label="Eclipse Luna - 4.4"/>
-      <choice
-          value="Kepler"
-          label="Eclipse Kepler - 4.3"/>
-      <choice
-          value="Juno"
-          label="Eclipse Juno - 4.2"/>
-      <choice
-          value="Indigo"
-          label="Eclipse Indigo - 3.7"/>
-      <choice
-          value="Helios"
-          label="Eclipse Helios - 3.6"/>
-      <choice
-          value="Galileo"
-          label="Eclipse Galileo - 3.5"/>
-      <choice
-          value="None"
-          label="None"/>
-      <description>Choose the compatibility level of the target platform</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        name="eclipse.api.baseline.target.platform"
-        value="None"
-        storageURI="scope://Workspace"
-        label="API Baseline Target Platform">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/GlobalVariable"/>
-      <choice
-          value="Oxygen"
-          label="Eclipse Oxygen - 4.7"/>
-      <choice
-          value="Neon"
-          label="Eclipse Neon - 4.6"/>
-      <choice
-          value="Mars"
-          label="Eclipse Mars - 4.5"/>
-      <choice
-          value="Luna"
-          label="Eclipse Luna - 4.4"/>
-      <choice
-          value="Kepler"
-          label="Eclipse Kepler - 4.3"/>
-      <choice
-          value="Juno"
-          label="Eclipse Juno - 4.2"/>
-      <choice
-          value="Indigo"
-          label="Eclipse Indigo - 3.7"/>
-      <choice
-          value="Helios"
-          label="Eclipse Helios - 3.6"/>
-      <choice
-          value="Galileo"
-          label="Eclipse Galileo - 3.5"/>
-      <choice
-          value="None"
-          label="None"/>
-      <description>Choose the compatibility level of the target platform for the modular API baseline</description>
-    </setupTask>
-  </setupTask>
   <setupTask
       xsi:type="setup:WorkspaceTask"
       id="workspace"
@@ -129,66 +44,13 @@
     </modification>
   </setupTask>
   <setupTask
-      xsi:type="setup.targlets:TargletTask">
-    <targlet
-        name="Eclipse Platform"
-        activeRepositoryList="${eclipse.target.platform}">
-      <repositoryList
-          name="None"/>
-      <repositoryList
-          name="Oxygen">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/4.7-I-builds"/>
-      </repositoryList>
-      <repositoryList
-          name="Neon">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/4.6"/>
-      </repositoryList>
-      <repositoryList
-          name="Mars">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/4.5"/>
-      </repositoryList>
-      <repositoryList
-          name="Luna">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/4.4"/>
-      </repositoryList>
-      <repositoryList
-          name="Kepler">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/4.3"/>
-      </repositoryList>
-      <repositoryList
-          name="Juno">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/4.2"/>
-      </repositoryList>
-      <repositoryList
-          name="Indigo">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/3.7"/>
-      </repositoryList>
-      <repositoryList
-          name="Helios">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/3.6"/>
-      </repositoryList>
-      <repositoryList
-          name="Galileo">
-        <repository
-            url="http://download.eclipse.org/eclipse/updates/3.5"/>
-      </repositoryList>
-    </targlet>
-  </setupTask>
-  <setupTask
       xsi:type="pde:APIBaselineFromTargetTask"
       name="Modular API Baseline"
       targetName="Modular API Baseline Target">
     <description>An API baseline based on the target platform named 'Modular API Baseline Target'</description>
   </setupTask>
-  <project name="dbt_rise_rv"
+  <project href="user:/minres.projects.setup?name='user.project',label='Custom projects',description='A container project for local user projects that are virtual members of the MINRES project catalog'#/"/>
+  <project name="dbt_rise_riscv"
       label="DBT-RISE-RISCV"
       logicalProjectContainer="/">
     <setupTask
@@ -307,65 +169,13 @@
     <setupTask
         xsi:type="setup.p2:P2Task">
       <requirement
-          name="org.eclipse.cdt.debug.standalone.feature.group"/>
-      <requirement
-          name="org.eclipse.cdt.debug.ui.memory.feature.group"/>
-      <requirement
           name="org.eclipse.cdt.feature.group"/>
-      <requirement
-          name="org.eclipse.cdt.mylyn.feature.group"/>
-      <requirement
-          name="org.eclipse.cdt.managedbuilder.llvm.feature.group"/>
-      <requirement
-          name="org.eclipse.cdt.gnu.multicorevisualizer.feature.group"/>
-      <requirement
-          name="org.eclipse.cdt.testsrunner.feature.feature.group"/>
-      <requirement
-          name="org.eclipse.cdt.msw.feature.group"
-          filter="(osgi.os=win32)"/>
-      <requirement
-          name="org.eclipse.egit.feature.group"/>
-      <requirement
-          name="org.eclipse.linuxtools.cdt.libhover.devhelp.feature.feature.group"/>
-      <requirement
-          name="org.eclipse.linuxtools.cdt.libhover.feature.feature.group"/>
-      <requirement
-          name="org.eclipse.linuxtools.changelog.c.feature.group"/>
-      <requirement
-          name="org.eclipse.linuxtools.gcov.feature.group"/>
-      <requirement
-          name="org.eclipse.linuxtools.gprof.feature.feature.group"/>
-      <requirement
-          name="org.eclipse.linuxtools.valgrind.feature.group"/>
-      <requirement
-          name="org.eclipse.mylyn.context_feature.feature.group"/>
-      <requirement
-          name="org.eclipse.mylyn.ide_feature.feature.group"/>
-      <requirement
-          name="org.eclipse.mylyn.team_feature.feature.group"/>
-      <requirement
-          name="org.eclipse.mylyn.wikitext_feature.feature.group"/>
-      <requirement
-          name="org.eclipse.mylyn_feature.feature.group"/>
-      <requirement
-          name="org.eclipse.tracecompass.gdbtrace.feature.group"/>
       <requirement
           name="com.cthing.cmakeed.feature.feature.group"/>
       <requirement
           name="org.eclipse.wst.jsdt.feature.feature.group"/>
       <requirement
           name="org.eclipse.wst.xml_ui.feature.feature.group"/>
-      <requirement
-          name="org.eclipse.linuxtools.callgraph.feature.feature.group"
-          filter="(osgi.os=linux)"/>
-      <repository
-          url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
-      <repository
-          url="http://download.eclipse.org/releases/oxygen"/>
-      <repository
-          url="http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/"/>
-      <repository
-          url="http://www.janua.fr/update/"/>
       <repository
           url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
       <repository
@@ -374,7 +184,7 @@
     </setupTask>
     <setupTask
         xsi:type="git:GitCloneTask"
-        id="git.clone.dbt_rise_rv"
+        id="git.clone.dbt_rise_riscv"
         remoteURI="Minres/DBT-RISE-RISCV">
       <annotation
           source="http://www.eclipse.org/oomph/setup/InducedChoices">
@@ -396,14 +206,23 @@
     <setupTask
         xsi:type="projects:ProjectsImportTask">
       <sourceLocator
-          rootFolder="${git.clone.dbt_rise_rv.location}"/>
+          rootFolder="${git.clone.dbt_rise_riscv.location}"/>
     </setupTask>
     <stream
-        name="master"/>
+        name="master">
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="-Doomph.redirection.dbt_rise_riscv"
+          value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//DBT-RISE-RISCV.setup->${git.clone.dbt_rise_riscv.location|uri}//DBT-RISE-RISCV.setup"
+          vm="true">
+        <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
+      </setupTask>
+    </stream>
     <description>DBT-RISE-RISCV provides cool stuff.</description>
   </project>
   <project name="JIT.ISS.CoreDsl"
-      label="JIT ISS CoreDsl">
+      label="JIT ISS CoreDsl"
+      logicalProjectContainer="/">
     <setupTask
         xsi:type="setup:CompoundTask"
         name="Global Variables">
@@ -530,6 +349,9 @@
         storageURI="scope://Workspace"/>
     <setupTask
         xsi:type="setup.p2:P2Task">
+      <requirement
+          name="org.eclipse.xtext.sdk.feature.group"
+          versionRange="[2.13.0,2.99.0]"/>
       <repository
           url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
       <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
@@ -591,10 +413,212 @@
         <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
       </setupTask>
     </stream>
-    <logicalProjectContainer
-        xsi:type="setup:ProjectCatalog"
-        href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
     <description>JIT ISS CoreDsl provides cool stuff.</description>
   </project>
-  <description>MINRES Projects provides cool projects.</description>
+  <project name="RDL.Editor"
+      label="RDL Editor"
+      logicalProjectContainer="/">
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="Global Variables">
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="github.user.id"
+          defaultValue="anonymous"
+          label="Github user ID">
+        <description>The user ID of the Github account</description>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="github.author.name"
+          label="Github author name">
+        <description>The author name used for Github commits</description>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="github.author.email"
+          label="Github author email">
+        <description>The email address associated with Github commits</description>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          type="PASSWORD"
+          name="github.user.password"
+          label="Github password for issues">
+        <annotation
+            source="http://www.eclipse.org/oomph/setup/PasswordVerificationDisabled">
+          <detail
+              key="type">
+            <value>form</value>
+          </detail>
+          <detail
+              key="form.url">
+            <value>https://github.com/session</value>
+          </detail>
+          <detail
+              key="form.cookie">
+            <value>PHPSESSID</value>
+          </detail>
+          <detail
+              key="form.parameters">
+            <value>login password authenticity_token utf8 commit</value>
+          </detail>
+          <detail
+              key="form.secure.parameters">
+            <value>password</value>
+          </detail>
+          <detail
+              key="form.filter">
+            <value>login=anonymous\&amp;.*</value>
+          </detail>
+          <detail
+              key="form.parameter.login">
+            <value>$${github.user.id}</value>
+          </detail>
+          <detail
+              key="form.parameter.password">
+            <value>$${value}</value>
+          </detail>
+          <detail
+              key="form.parameter.utf8">
+            <value>✓</value>
+          </detail>
+          <detail
+              key="form.parameter.commit">
+            <value>Sign in</value>
+          </detail>
+          <detail
+              key="form.ok">
+            <value>Valid password for $${form.parameter.login} at $${form.url}.</value>
+          </detail>
+          <detail
+              key="form.info">
+            <value>Validate the password for $${form.parameter.login} at $${form.url}.</value>
+          </detail>
+          <detail
+              key="form.warning">
+            <value>Unable to validate the password for $${form.parameter.login} because $${form.url} is unreachable.</value>
+          </detail>
+          <detail
+              key="form.error">
+            <value>Invalid password for $${form.parameter.login} at $${form.url}.</value>
+          </detail>
+        </annotation>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:VariableTask"
+          name="github.remoteURIs"
+          label="Github repository">
+        <choice
+            value="git@github.com:@{remoteURI}.git"
+            label="Git (read-write)"/>
+        <choice
+            value="https://${github.user.id|username}@github.com/@{remoteURI}.git"
+            label="HTTPS (read-write)">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/MatchChoice"/>
+        </choice>
+        <choice
+            value="https://github.com/@{remoteURI}.git"
+            label="HTTPS (read-only, anonymous)"/>
+        <description>Choose from the available Github URIs</description>
+      </setupTask>
+    </setupTask>
+    <setupTask
+        xsi:type="jdt:JRETask"
+        version="JavaSE-1.8"
+        location="${jre.location-1.8}">
+      <description>Define the JRE needed to compile and run the Java projects of ${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:EclipseIniTask"
+        option="-Xmx"
+        value="1G"
+        vm="true">
+      <description>Set the heap space needed to work with the projects of ${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:ResourceCreationTask"
+        excludedTriggers="STARTUP MANUAL"
+        content="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;section name=&quot;Workbench&quot;>&#xD;&#xA;&#x9;&lt;section name=&quot;org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart&quot;>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;true&quot; key=&quot;group_libraries&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;false&quot; key=&quot;linkWithEditor&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;layout&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;2&quot; key=&quot;rootMode&quot;/>&#xD;&#xA;&#x9;&#x9;&lt;item value=&quot;&amp;lt;?xml version=&amp;quot;1.0&amp;quot; encoding=&amp;quot;UTF-8&amp;quot;?&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;packageExplorer configured=&amp;quot;true&amp;quot; group_libraries=&amp;quot;1&amp;quot; layout=&amp;quot;2&amp;quot; linkWithEditor=&amp;quot;0&amp;quot; rootMode=&amp;quot;2&amp;quot; sortWorkingSets=&amp;quot;false&amp;quot; workingSetName=&amp;quot;&amp;quot;&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;workingSet editPageId=&amp;quot;org.eclipse.jdt.internal.ui.OthersWorkingSet&amp;quot; factoryID=&amp;quot;org.eclipse.ui.internal.WorkingSetFactory&amp;quot; id=&amp;quot;1382792884467_1&amp;quot; label=&amp;quot;Other Projects&amp;quot; name=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/localWorkingSetManager&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;activeWorkingSet workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;allWorkingSets workingSetName=&amp;quot;Other Projects&amp;quot;/&amp;gt;&amp;#x0D;&amp;#x0A;&amp;lt;/packageExplorer&amp;gt;&quot; key=&quot;memento&quot;/>&#xD;&#xA;&#x9;&lt;/section>&#xD;&#xA;&lt;/section>&#xD;&#xA;"
+        targetURL="${workspace.location|uri}/.metadata/.plugins/org.eclipse.jdt.ui/dialog_settings.xml"
+        encoding="UTF-8">
+      <description>Initialize JDT's package explorer to show working sets as its root objects</description>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="eclipse.target.platform"
+        value="None"
+        defaultValue="Neon"
+        storageURI="scope://Workspace"/>
+    <setupTask
+        xsi:type="setup.p2:P2Task">
+      <requirement
+          name="org.eclipse.xtext.sdk.feature.group"
+          versionRange="[2.13.0,2.99.0]"/>
+      <repository
+          url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+      <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="git:GitCloneTask"
+        id="git.clone.RDL_Editor"
+        filter=""
+        remoteURI="Minres/RDL-Editor">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/InducedChoices">
+        <detail
+            key="inherit">
+          <value>github.remoteURIs</value>
+        </detail>
+        <detail
+            key="label">
+          <value>${scope.project.label} Git repository</value>
+        </detail>
+        <detail
+            key="target">
+          <value>remoteURI</value>
+        </detail>
+      </annotation>
+      <description>${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="projects:ProjectsImportTask">
+      <sourceLocator
+          rootFolder="${git.clone.RDL_Editor.location}"
+          locateNestedProjects="true"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup.workingsets:WorkingSetTask">
+      <workingSet
+          name="${scope.project.name}">
+        <predicate
+            xsi:type="predicates:AndPredicate">
+          <operand
+              xsi:type="predicates:RepositoryPredicate"
+              project="com.minres.coredsl"/>
+        </predicate>
+      </workingSet>
+      <description>The dynamic working sets for ${scope.project.label}</description>
+    </setupTask>
+    <setupTask
+        xsi:type="pde:TargetPlatformTask"
+        name="com.minres.rdl.target">
+      <description>Sets the RDL Editor target platform</description>
+    </setupTask>
+    <stream
+        name="master"
+        label="Master">
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="-Doomph.redirection.JIT.ISS.CoreDsl"
+          value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//JITISSCoreDsl.setup->${git.clone.JIT.ISS.CoreDsl.location|uri}//JITISSCoreDsl.setup"
+          vm="true">
+        <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
+      </setupTask>
+    </stream>
+    <description>RDL Editor provides cool stuff.</description>
+  </project>
+  <project href="projects/SCViewer.setup?name='SCViewer',label='SCViewer',description='SCViewer'#/"/>
+  <description>MINRES Projects provide cool projects.</description>
 </setup:ProjectCatalog>
