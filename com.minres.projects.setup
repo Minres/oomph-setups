@@ -37,6 +37,9 @@
       targetName="Modular API Baseline Target">
     <description>An API baseline based on the target platform named 'Modular API Baseline Target'</description>
   </setupTask>
+  <setupTask
+      xsi:type="setup:WorkspaceTask"
+      id="workspace"/>
   <project href="user:/minres.projects.setup?name='user.project',label='Custom projects',description='A container project for local user projects that are virtual members of the MINRES project catalog'#/"/>
   <project href="projects/DBT-RISE-RISCV.setup?name='dbt_rise_riscv'#/"/>
   <project href="projects/RDL-Editor.setup?name='RDL.Editor'#/"/>
