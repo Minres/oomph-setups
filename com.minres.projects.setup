@@ -52,8 +52,8 @@
   <project href="user:/minres.projects.setup?name='user.project',label='Custom projects',description='A container project for local user projects that are virtual members of the MINRES project catalog'#/"/>
   <project href="projects/DBT-RISE-RISCV.setup?name='dbt_rise_riscv'#/"/>
   <project href="projects/RDL-Editor.setup?name='RDL.Editor'#/"/>
-  <project href="projects/SCViewer.setup?name='SCViewer',label='SCViewer',description='SCViewer'#/"/>
-  <project href="projects/SystemC-Quickstart.setup?name='systemc.quickstart',label='SysctemC Quickstart'#/"/>
+  <project href="projects/SCViewer.setup?name='SCViewer'#/"/>
+  <project href="projects/SystemC-Quickstart.setup?name='systemc.quickstart'#/"/>
   <project href="projects/JIT-ISS-CoreDsl.setup?name='JIT.ISS.CoreDsl'#/"/>
   <description>MINRES provided cool projects.</description>
 </setup:ProjectCatalog>
