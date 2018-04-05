@@ -651,6 +651,8 @@
         <requirement
             name="org.eclipse.linuxtools.callgraph.feature.feature.group"
             filter="(osgi.os=linux)"/>
+        <requirement
+            name="com.eclipserunner.feature.feature.group"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
         <repository
@@ -663,6 +665,8 @@
             url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
         <repository
             url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
       </setupTask>
       <setupTask
           xsi:type="setup:EclipseIniTask"
