@@ -12,17 +12,17 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
-    name="JIT.ISS.CoreDsl"
-    label="JIT ISS CoreDsl (non-public)">
+    name="mendel"
+    label="Mendel (non-public)">
   <setupTask
       xsi:type="setup:CompoundTask"
       name="Global Variables">
     <setupTask
         xsi:type="setup:VariableTask"
         name="minres.git.user.id"
-        defaultValue="anonymous"
-        label="Github user ID">
-      <description>The user ID of the Github account</description>
+        defaultValue=""
+        label="User ID">
+      <description>The user ID of the MINRES account</description>
     </setupTask>
     <setupTask
         xsi:type="setup:VariableTask"
@@ -44,7 +44,7 @@
   <setupTask
       xsi:type="setup:EclipseIniTask"
       option="-Xmx"
-      value="1G"
+      value="2G"
       vm="true">
     <description>Set the heap space needed to work with the projects of ${scope.project.label}</description>
   </setupTask>
@@ -67,50 +67,144 @@
     <requirement
         name="org.eclipse.xtext.sdk.feature.group"
         versionRange="[2.13.0,2.99.0]"/>
+    <requirement
+        name="org.eclipse.gmf.runtime.notation.sdk.feature.group"/>
+    <requirement
+        name="org.eclipse.gmf.feature.group"/>
+    <requirement
+        name="org.eclipse.gmf.runtime.sdk.feature.group"/>
     <repository
         url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.JIT.ISS.CoreDsl"
+      id="git.clone.mendel"
       filter=""
-      remoteURI="https://${minres.git.user.id}@minres.com/git/SystemC/JIT-ISS-CoreDsl.git">
+      remoteURI="https://${minres.git.user.id}@minres.com/git/Mendel/mendel.git">
     <description>${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="projects:ProjectsImportTask">
     <sourceLocator
-        rootFolder="${git.clone.JIT.ISS.CoreDsl.location}"
-        locateNestedProjects="true"/>
+        rootFolder="${git.clone.mendel.location}"/>
+  </setupTask>
+  <setupTask
+      xsi:type="pde:TargetPlatformTask"
+      name="Luna Platform">
+    <description>Sets the Mendel target platform</description>
   </setupTask>
   <setupTask
       xsi:type="setup.workingsets:WorkingSetTask">
     <workingSet
-        name="${scope.project.name}">
+        name="${scope.project.name} Features">
       <predicate
           xsi:type="predicates:AndPredicate">
         <operand
-            xsi:type="predicates:RepositoryPredicate"
-            project="com.minres.coredsl"/>
+            xsi:type="predicates:LocationPredicate"
+            pattern="${git.clone.mendel.location}/features/.*"/>
       </predicate>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
   <setupTask
-      xsi:type="pde:TargetPlatformTask"
-      name="com.minres.coredsl.target">
-    <description>Sets the CoreDSL target platform</description>
+      xsi:type="setup.workingsets:WorkingSetTask">
+    <workingSet
+        name="${scope.project.name} SBML Editor"
+        id="">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:OrPredicate">
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="com.minres.sbml_editor.product"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="com\.minres\.mendel\.models\.sbml"/>
+        </operand>
+        <operand
+            xsi:type="predicates:LocationPredicate"
+            pattern="${git.clone.mendel.location}/.*"/>
+      </predicate>
+    </workingSet>
+    <description>The dynamic working sets for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.workingsets:WorkingSetTask">
+    <workingSet
+        name="${scope.project.name} Tests">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:LocationPredicate"
+            pattern="${git.clone.mendel.location}/tests/.*"/>
+      </predicate>
+    </workingSet>
+    <description>The dynamic working sets for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.workingsets:WorkingSetTask">
+    <workingSet
+        name="${scope.project.name} Releng">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:LocationPredicate"
+            pattern="${git.clone.mendel.location}/releng/.*"/>
+      </predicate>
+    </workingSet>
+    <description>The dynamic working sets for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.workingsets:WorkingSetTask">
+    <workingSet
+        name="${scope.project.name} 3rd Party">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:LocationPredicate"
+            pattern="${git.clone.mendel.location}/3rdparty/.*"/>
+      </predicate>
+    </workingSet>
+    <description>The dynamic working sets for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.workingsets:WorkingSetTask">
+    <workingSet
+        name="${scope.project.name} Plugins">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:LocationPredicate"
+            pattern="${git.clone.mendel.location}/bundles/.*"/>
+      </predicate>
+    </workingSet>
+    <description>The dynamic working sets for ${scope.project.label}</description>
+  </setupTask>
+  <setupTask
+      xsi:type="setup.workingsets:WorkingSetTask">
+    <workingSet
+        name="${scope.project.name} C++">
+      <predicate
+          xsi:type="predicates:AndPredicate">
+        <operand
+            xsi:type="predicates:LocationPredicate"
+            pattern="${git.clone.mendel.location}/C\+\+/.*"/>
+      </predicate>
+    </workingSet>
+    <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
   <stream name="${minres-git-stream}"
-      label="Stream to checkout">
+      label="Stream">
     <setupTask
         xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.JIT.ISS.CoreDsl"
-        value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//JITISSCoreDsl.setup->${git.clone.JIT.ISS.CoreDsl.location|uri}//JITISSCoreDsl.setup"
+        option="-Doomph.redirection.mendel"
+        value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//Mendel.setup->${git.clone.mendel.location|uri}//mendel.setup"
         vm="true">
       <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
     </setupTask>
+    <description></description>
   </stream>
   <description>A Xtext based CoreDSL editor with syntax highlighting and context sensitive help.</description>
 </setup:Project>

@@ -46,5 +46,6 @@
   <project href="projects/SCViewer.setup?name='SCViewer'#/"/>
   <project href="projects/SystemC-Quickstart.setup?name='systemc.quickstart'#/"/>
   <project href="projects/JIT-ISS-CoreDsl.setup?name='JIT.ISS.CoreDsl'#/"/>
+  <project href="projects/Mendel.setup?name='mendel'#/"/>
   <description>MINRES provided cool projects.</description>
 </setup:ProjectCatalog>
