@@ -184,5 +184,5 @@
       label="Stream to checkout">
     <description></description>
   </stream>
-  <description>A Xtext based CoreDSL editor with syntax highlighting and context sensitive help.</description>
+  <description>A synthetic biology geared workbench to ease setup and use of ABCSMC</description>
 </setup:Project>
