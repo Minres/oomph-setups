@@ -12,8 +12,8 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
-    name="JIT.ISS.CoreDsl"
-    label="JIT ISS CoreDsl (non-public)">
+    name="CoreDsl"
+    label="CoreDsl (non-public)">
   <setupTask
       xsi:type="setup:CompoundTask"
       name="Global Variables">
@@ -29,9 +29,9 @@
         name="minres-git-stream"
         label="Stream to checkout">
       <choice
-          value="develop"/>
-      <choice
           value="master"/>
+      <choice
+          value="develop"/>
       <description>Stream to checkout</description>
     </setupTask>
   </setupTask>
@@ -73,7 +73,7 @@
   </setupTask>
   <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.JIT.ISS.CoreDsl"
+      id="git.clone.CoreDsl"
       filter=""
       remoteURI="https://${minres.git.user.id}@minres.com/git/SystemC/JIT-ISS-CoreDsl.git">
     <description>${scope.project.label}</description>
@@ -81,7 +81,7 @@
   <setupTask
       xsi:type="projects:ProjectsImportTask">
     <sourceLocator
-        rootFolder="${git.clone.JIT.ISS.CoreDsl.location}"
+        rootFolder="${git.clone.CoreDsl.location}"
         locateNestedProjects="true"/>
   </setupTask>
   <setupTask
@@ -103,14 +103,6 @@
     <description>Sets the CoreDSL target platform</description>
   </setupTask>
   <stream name="${minres-git-stream}"
-      label="Stream to checkout">
-    <setupTask
-        xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.JIT.ISS.CoreDsl"
-        value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//JITISSCoreDsl.setup->${git.clone.JIT.ISS.CoreDsl.location|uri}//JITISSCoreDsl.setup"
-        vm="true">
-      <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
-    </setupTask>
-  </stream>
+      label="Stream to checkout"/>
   <description>A Xtext based CoreDSL editor with syntax highlighting and context sensitive help.</description>
 </setup:Project>

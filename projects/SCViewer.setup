@@ -120,6 +120,16 @@
           label="HTTPS (read-only, anonymous)"/>
       <description>Choose from the available Github URIs</description>
     </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="git-stream"
+        label="Stream to checkout">
+      <choice
+          value="master"/>
+      <choice
+          value="develop"/>
+      <description>Stream to checkout</description>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="jdt:JRETask"
@@ -200,7 +210,7 @@
       name="Neon Platform">
     <description>Sets the RDL Editor target platform</description>
   </setupTask>
-  <stream name="master"
-      label="Master"/>
+  <stream name="${git-stream}"
+      label="Stream to checkout"/>
   <description>A lightweight tool to visualize VCD and transaction traces.</description>
 </setup:Project>

@@ -12,7 +12,7 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
-    name="mendel"
+    name="Mendel"
     label="Mendel (non-public)">
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -29,9 +29,9 @@
         name="minres-git-stream"
         label="Stream to checkout">
       <choice
-          value="develop"/>
-      <choice
           value="master"/>
+      <choice
+          value="develop"/>
       <description>Stream to checkout</description>
     </setupTask>
   </setupTask>
@@ -99,11 +99,8 @@
     <workingSet
         name="${scope.project.name} Features">
       <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:LocationPredicate"
-            pattern="${git.clone.mendel.location}/features/.*"/>
-      </predicate>
+          xsi:type="predicates:LocationPredicate"
+          pattern="${git.clone.mendel.location}/features/.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
@@ -121,7 +118,10 @@
               pattern="com.minres.sbml_editor.product"/>
           <operand
               xsi:type="predicates:NamePredicate"
-              pattern="com\.minres\.mendel\.models\.sbml"/>
+              pattern="com\.minres\.mendel\.models\.sbml\.diagram\..*"/>
+          <operand
+              xsi:type="predicates:NamePredicate"
+              pattern="com\.minres\.mendel\.models\.sbml\.editor"/>
         </operand>
         <operand
             xsi:type="predicates:LocationPredicate"
@@ -135,11 +135,8 @@
     <workingSet
         name="${scope.project.name} Tests">
       <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:LocationPredicate"
-            pattern="${git.clone.mendel.location}/tests/.*"/>
-      </predicate>
+          xsi:type="predicates:LocationPredicate"
+          pattern="${git.clone.mendel.location}/tests/.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
@@ -148,11 +145,8 @@
     <workingSet
         name="${scope.project.name} Releng">
       <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:LocationPredicate"
-            pattern="${git.clone.mendel.location}/releng/.*"/>
-      </predicate>
+          xsi:type="predicates:LocationPredicate"
+          pattern="${git.clone.mendel.location}/releng/.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
@@ -161,11 +155,8 @@
     <workingSet
         name="${scope.project.name} 3rd Party">
       <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:LocationPredicate"
-            pattern="${git.clone.mendel.location}/3rdparty/.*"/>
-      </predicate>
+          xsi:type="predicates:LocationPredicate"
+          pattern="${git.clone.mendel.location}/3rdparty/.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
@@ -174,11 +165,8 @@
     <workingSet
         name="${scope.project.name} Plugins">
       <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:LocationPredicate"
-            pattern="${git.clone.mendel.location}/bundles/.*"/>
-      </predicate>
+          xsi:type="predicates:LocationPredicate"
+          pattern="${git.clone.mendel.location}/bundles/.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
@@ -187,23 +175,13 @@
     <workingSet
         name="${scope.project.name} C++">
       <predicate
-          xsi:type="predicates:AndPredicate">
-        <operand
-            xsi:type="predicates:LocationPredicate"
-            pattern="${git.clone.mendel.location}/C\+\+/.*"/>
-      </predicate>
+          xsi:type="predicates:LocationPredicate"
+          pattern="${git.clone.mendel.location}/C\+\+/.*"/>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
   <stream name="${minres-git-stream}"
-      label="Stream">
-    <setupTask
-        xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.mendel"
-        value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//Mendel.setup->${git.clone.mendel.location|uri}//mendel.setup"
-        vm="true">
-      <description>Set an Oomph redirection system property to redirect the logical location of this setup to its physical location in the Git clone.</description>
-    </setupTask>
+      label="Stream to checkout">
     <description></description>
   </stream>
   <description>A Xtext based CoreDSL editor with syntax highlighting and context sensitive help.</description>

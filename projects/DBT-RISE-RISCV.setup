@@ -124,6 +124,16 @@
           label="HTTPS (read-only, anonymous)"/>
       <description>Choose from the available Github URIs</description>
     </setupTask>
+    <setupTask
+        xsi:type="setup:VariableTask"
+        name="git-stream"
+        label="Stream to checkout">
+      <choice
+          value="master"/>
+      <choice
+          value="develop"/>
+      <description>Stream to checkout</description>
+    </setupTask>
   </setupTask>
   <setupTask
       xsi:type="setup:EclipseIniTask"
@@ -182,18 +192,7 @@
     <sourceLocator
         rootFolder="${git.clone.dbt_rise_riscv.location}"/>
   </setupTask>
-  <stream name="master">
-    <setupTask
-        xsi:type="setup:EclipseIniTask"
-        option="-Doomph.redirection.dbt_rise_riscv"
-        value="=https://git.eclipse.org/c/Minres/oomph-setups.git.git/plain//DBT-RISE-RISCV.setup->${git.clone.dbt_rise_riscv.location|uri}//DBT-RISE-RISCV.setup"
-        vm="true">
-      <description>
-        Set an Oomph redirection system property to redirect the
-        logical location of this setup to its physical location in the Git
-        clone.
-      </description>
-    </setupTask>
-  </stream>
+  <stream name="${git-stream}"
+      label="Stream to checkout"/>
   <description>An instruction set simulator based on DBT-RISE implementing the RISC-V ISA.</description>
 </setup:Project>
