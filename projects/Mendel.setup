@@ -75,10 +75,14 @@
         name="org.eclipse.gmf.runtime.sdk.feature.group"/>
     <requirement
         name="org.eclipse.gmf.sdk.feature.group"/>
+    <requirement
+        name="org.sonatype.tycho.m2e.feature.feature.group"/>
     <repository
         url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
     <repository
         url="http://download.eclipse.org/modeling/gmp/gmf-tooling/updates/releases/"/>
+    <repository
+        url="http://repo1.maven.org/maven2/.m2e/connectors/m2eclipse-tycho/0.9.0/N/0.9.0.201609252021/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
