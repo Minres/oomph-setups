@@ -1835,8 +1835,6 @@
         <requirement
             name="org.eclipse.lsp4j.sdk.feature.group"/>
         <requirement
-            name="org.eclipse.xtext.sdk.feature.group"/>
-        <requirement
             name="org.codehaus.groovy.eclipse.feature.feature.group"/>
         <requirement
             name="org.codehaus.groovy.jdt.patch.feature.group"/>
@@ -1857,23 +1855,19 @@
         <requirement
             name="org.eclipse.egit.gitflow.feature.feature.group"/>
         <requirement
-            name="org.eclipse.xtext.docs.feature.group"/>
-        <requirement
-            name="org.eclipse.xtext.examples.feature.group"/>
-        <requirement
-            name="org.eclipse.xtext.redist.feature.group"/>
-        <requirement
-            name="org.eclipse.xtext.runtime.feature.group"/>
-        <requirement
-            name="org.eclipse.xtext.ui.feature.group"/>
-        <requirement
-            name="org.eclipse.xtext.xtext.ui.feature.group"/>
-        <requirement
             name="org.eclipse.recommenders.rcp.feature.feature.group"/>
         <requirement
             name="org.eclipse.linuxtools.javadocs.feature.feature.group"/>
         <requirement
             name="org.eclipse.jgit.feature.group"/>
+        <requirement
+            name="org.eclipse.xtend.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.emf.mwe2.language.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.emf.mwe.sdk.feature.group"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
         <repository
@@ -1882,6 +1876,8 @@
             url="http://dist.springsource.org/snapshot/GRECLIPSE/e4.7/"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
       </setupTask>
     </version>
     <version
