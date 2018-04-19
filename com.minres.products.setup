@@ -1856,6 +1856,24 @@
             name="com.eclipserunner.feature.feature.group"/>
         <requirement
             name="org.eclipse.egit.gitflow.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.docs.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.examples.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.redist.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.runtime.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.ui.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.xtext.ui.feature.group"/>
+        <requirement
+            name="org.eclipse.recommenders.rcp.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.linuxtools.javadocs.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.jgit.feature.group"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
         <repository
