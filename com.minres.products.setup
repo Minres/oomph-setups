@@ -496,6 +496,10 @@
               value="120"/>
         </setupTask>
       </setupTask>
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="--launcher.GTK_version"
+          value="2"/>
     </version>
     <version
         name="photon"
@@ -854,6 +858,10 @@
               value="120"/>
         </setupTask>
       </setupTask>
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="--launcher.GTK_version"
+          value="2"/>
     </version>
     <description>MINRES CDT provides the Eclipse CDT plus usefull extensions.</description>
   </product>
@@ -2214,6 +2222,10 @@
               value="120"/>
         </setupTask>
       </setupTask>
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="--launcher.GTK_version"
+          value="2"/>
     </version>
     <version
         name="photon"
@@ -2610,6 +2622,10 @@
               value="120"/>
         </setupTask>
       </setupTask>
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="--launcher.GTK_version"
+          value="2"/>
     </version>
     <description>MINRES CDT provides the Eclipse CDT plus usefull extensions geared towards embedded SW development.</description>
   </product>
@@ -2708,6 +2724,10 @@
         <repository
             url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
       </setupTask>
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="--launcher.GTK_version"
+          value="2"/>
     </version>
     <version
         name="photon"
@@ -2797,6 +2817,10 @@
         <repository
             url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
       </setupTask>
+      <setupTask
+          xsi:type="setup:EclipseIniTask"
+          option="--launcher.GTK_version"
+          value="2"/>
     </version>
     <description>The essential tools for Java and DSL developers, including a Java &amp; Xtend IDE, a DSL Framework (Xtext), a Git client, XML Editor, and Maven integration.</description>
   </product>
