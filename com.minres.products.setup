@@ -2713,6 +2713,18 @@
             name="org.eclipse.emf.mwe2.language.sdk.feature.group"/>
         <requirement
             name="org.eclipse.emf.mwe.sdk.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.cfr.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.jad.feature.group"
+            filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+        <requirement
+            name="org.sf.feeling.decompiler.jd.feature.group"
+            filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+        <requirement
+            name="org.sf.feeling.decompiler.procyon.feature.group"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
         <repository
@@ -2723,6 +2735,8 @@
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
             url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+        <repository
+            url="https://ecd-plugin.github.io/update"/>
       </setupTask>
       <setupTask
           xsi:type="setup:EclipseIniTask"
@@ -2806,6 +2820,18 @@
             name="org.eclipse.emf.mwe2.language.sdk.feature.group"/>
         <requirement
             name="org.eclipse.emf.mwe.sdk.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.cfr.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.jad.feature.group"
+            filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+        <requirement
+            name="org.sf.feeling.decompiler.jd.feature.group"
+            filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+        <requirement
+            name="org.sf.feeling.decompiler.procyon.feature.group"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/photon"/>
         <repository
@@ -2816,6 +2842,8 @@
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
             url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+        <repository
+            url="https://ecd-plugin.github.io/update"/>
       </setupTask>
       <setupTask
           xsi:type="setup:EclipseIniTask"
@@ -2902,6 +2930,18 @@
             filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
         <requirement
             name="org.eclipse.egit.gitflow.feature.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.cfr.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.jad.feature.group"
+            filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+        <requirement
+            name="org.sf.feeling.decompiler.jd.feature.group"
+            filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+        <requirement
+            name="org.sf.feeling.decompiler.procyon.feature.group"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/oxygen"/>
         <repository
@@ -2914,6 +2954,8 @@
             url="https://resheim.net/p2/eclipse-launcher/"/>
         <repository
             url="http://macbadge-updates.s3.amazonaws.com/"/>
+        <repository
+            url="https://ecd-plugin.github.io/update"/>
       </setupTask>
     </version>
     <version
@@ -2985,6 +3027,18 @@
             filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
         <requirement
             name="org.eclipse.egit.gitflow.feature.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.cfr.feature.group"/>
+        <requirement
+            name="org.sf.feeling.decompiler.jad.feature.group"
+            filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+        <requirement
+            name="org.sf.feeling.decompiler.jd.feature.group"
+            filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+        <requirement
+            name="org.sf.feeling.decompiler.procyon.feature.group"/>
         <repository
             url="http://download.eclipse.org/technology/epp/packages/photon"/>
         <repository
@@ -2997,6 +3051,8 @@
             url="https://resheim.net/p2/eclipse-launcher/"/>
         <repository
             url="http://macbadge-updates.s3.amazonaws.com/"/>
+        <repository
+            url="https://ecd-plugin.github.io/update"/>
       </setupTask>
     </version>
     <description>The essential tools for Java and DSL developers, including a Java &amp; Xtend IDE, a DSL Framework (Xtext), a Git client, XML Editor, and Maven integration.</description>
