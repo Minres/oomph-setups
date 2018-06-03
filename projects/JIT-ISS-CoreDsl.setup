@@ -21,8 +21,8 @@
         xsi:type="setup:VariableTask"
         name="minres.git.user.id"
         defaultValue="anonymous"
-        label="Github user ID">
-      <description>The user ID of the Github account</description>
+        label="User ID">
+      <description>The user ID of the MINRES account</description>
     </setupTask>
     <setupTask
         xsi:type="setup:VariableTask"
