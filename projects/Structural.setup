@@ -12,117 +12,21 @@
     xmlns:setup.p2="http://www.eclipse.org/oomph/setup/p2/1.0"
     xmlns:setup.workingsets="http://www.eclipse.org/oomph/setup/workingsets/1.0"
     xsi:schemaLocation="http://www.eclipse.org/oomph/setup/git/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Git.ecore http://www.eclipse.org/oomph/setup/jdt/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/JDT.ecore http://www.eclipse.org/oomph/setup/pde/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/PDE.ecore http://www.eclipse.org/oomph/predicates/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Predicates.ecore http://www.eclipse.org/oomph/setup/projects/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/Projects.ecore http://www.eclipse.org/oomph/setup/workingsets/1.0 http://git.eclipse.org/c/oomph/org.eclipse.oomph.git/plain/setups/models/SetupWorkingSets.ecore"
-    name="SCViewer"
-    label="SCViewer">
+    name="Structural"
+    label="Structural (non-public)">
   <setupTask
       xsi:type="setup:CompoundTask"
       name="Global Variables">
     <setupTask
         xsi:type="setup:VariableTask"
-        name="github.user.id"
+        name="minres.git.user.id"
         defaultValue="anonymous"
         label="Github user ID">
       <description>The user ID of the Github account</description>
     </setupTask>
     <setupTask
         xsi:type="setup:VariableTask"
-        name="github.author.name"
-        label="Github author name">
-      <description>The author name used for Github commits</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        name="github.author.email"
-        label="Github author email">
-      <description>The email address associated with Github commits</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        type="PASSWORD"
-        name="github.user.password"
-        label="Github password for issues">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/PasswordVerificationDisabled">
-        <detail
-            key="type">
-          <value>form</value>
-        </detail>
-        <detail
-            key="form.url">
-          <value>https://github.com/session</value>
-        </detail>
-        <detail
-            key="form.cookie">
-          <value>PHPSESSID</value>
-        </detail>
-        <detail
-            key="form.parameters">
-          <value>login password authenticity_token utf8 commit</value>
-        </detail>
-        <detail
-            key="form.secure.parameters">
-          <value>password</value>
-        </detail>
-        <detail
-            key="form.filter">
-          <value>login=anonymous\&amp;.*</value>
-        </detail>
-        <detail
-            key="form.parameter.login">
-          <value>$${github.user.id}</value>
-        </detail>
-        <detail
-            key="form.parameter.password">
-          <value>$${value}</value>
-        </detail>
-        <detail
-            key="form.parameter.utf8">
-          <value>✓</value>
-        </detail>
-        <detail
-            key="form.parameter.commit">
-          <value>Sign in</value>
-        </detail>
-        <detail
-            key="form.ok">
-          <value>Valid password for $${form.parameter.login} at $${form.url}.</value>
-        </detail>
-        <detail
-            key="form.info">
-          <value>Validate the password for $${form.parameter.login} at $${form.url}.</value>
-        </detail>
-        <detail
-            key="form.warning">
-          <value>Unable to validate the password for $${form.parameter.login} because $${form.url} is unreachable.</value>
-        </detail>
-        <detail
-            key="form.error">
-          <value>Invalid password for $${form.parameter.login} at $${form.url}.</value>
-        </detail>
-      </annotation>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        name="github.remoteURIs"
-        value=""
-        label="Github repository">
-      <choice
-          value="git@github.com:@{remoteURI}.git"
-          label="Git (read-write)"/>
-      <choice
-          value="https://${github.user.id|username}@github.com/@{remoteURI}.git"
-          label="HTTPS (read-write)">
-        <annotation
-            source="http://www.eclipse.org/oomph/setup/MatchChoice"/>
-      </choice>
-      <choice
-          value="https://github.com/@{remoteURI}.git"
-          label="HTTPS (read-only, anonymous)"/>
-      <description>Choose from the available Github URIs</description>
-    </setupTask>
-    <setupTask
-        xsi:type="setup:VariableTask"
-        name="git-stream"
+        name="minres-git-stream"
         label="Stream to checkout">
       <choice
           value="master"/>
@@ -161,35 +65,28 @@
   <setupTask
       xsi:type="setup.p2:P2Task">
     <requirement
-        name="org.eclipse.pde.feature.group"/>
+        name="org.eclipse.xtext.sdk.feature.group"
+        versionRange="[2.13.0,2.99.0]"/>
+    <requirement
+        name="org.eclipse.emf.ecore.xcore.sdk.feature.group"/>
+    <requirement
+        name="org.eclipse.emf.ecore.xcore.ui.feature.group"/>
+    <repository
+        url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="git:GitCloneTask"
-      id="git.clone.SCViewer"
+      id="git.clone.Structural"
       filter=""
-      remoteURI="Minres/SCViewer">
-    <annotation
-        source="http://www.eclipse.org/oomph/setup/InducedChoices">
-      <detail
-          key="inherit">
-        <value>github.remoteURIs</value>
-      </detail>
-      <detail
-          key="label">
-        <value>${scope.project.label} Git repository</value>
-      </detail>
-      <detail
-          key="target">
-        <value>remoteURI</value>
-      </detail>
-    </annotation>
+      remoteURI="https://${minres.git.user.id}@minres.com/git/SystemC/Structural.git"
+      pushURI="">
     <description>${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="projects:ProjectsImportTask">
     <sourceLocator
-        rootFolder="${git.clone.SCViewer.location}"
+        rootFolder="${git.clone.Structural.location}"
         locateNestedProjects="true"/>
   </setupTask>
   <setupTask
@@ -200,17 +97,17 @@
           xsi:type="predicates:AndPredicate">
         <operand
             xsi:type="predicates:RepositoryPredicate"
-            project="com.minres.scviewer.ui"/>
+            project="com.minres.structural"/>
       </predicate>
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
   <setupTask
       xsi:type="pde:TargetPlatformTask"
-      name="Neon Platform">
-    <description>Sets the RDL Editor target platform</description>
+      name="com.minres.structural.target">
+    <description>Sets the Structural target platform</description>
   </setupTask>
-  <stream name="${git-stream}"
+  <stream name="${minres-git-stream}"
       label="Stream to checkout"/>
-  <description>A lightweight tool to visualize VCD and transaction traces.</description>
+  <description>A Xtext based Structural editor with syntax highlighting and context sensitive help.</description>
 </setup:Project>
