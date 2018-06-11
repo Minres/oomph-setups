@@ -79,7 +79,7 @@
       xsi:type="git:GitCloneTask"
       id="git.clone.Structural"
       filter=""
-      remoteURI="https://${minres.git.user.id}@minres.com/git/SystemC/Structural.git"
+      remoteURI="https://${minres.git.user.id}@git.minres.com/VP/Structural.git"
       pushURI="">
     <description>${scope.project.label}</description>
   </setupTask>

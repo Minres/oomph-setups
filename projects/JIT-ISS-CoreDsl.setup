@@ -75,7 +75,7 @@
       xsi:type="git:GitCloneTask"
       id="git.clone.CoreDsl"
       filter=""
-      remoteURI="https://${minres.git.user.id}@minres.com/git/SystemC/JIT-ISS-CoreDsl.git">
+      remoteURI="https://${minres.git.user.id}@git.minres.com/DBT-RISE/CoreDSL.git">
     <description>${scope.project.label}</description>
   </setupTask>
   <setupTask
