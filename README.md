@@ -12,7 +12,7 @@ according to the instructions given there.
 Open the eclipse_inst.ini file being part of the Eclipse Installer (on MacOS it is located at 'Eclipse Installer.app/Contents/Eclipse'). Add the following line at the end:
 
 ```
--Doomph.redirection.setups=index:/->https://raw.githubusercontent.com/Minres/oomph-setups/master/
+-Doomph.redirection.setups=index:/->https://git.minres.com/Tooling/oomph-setups/raw/branch/master/
 ```
 
 ## Use the MINRES setups temporarily with the eclipse installer
@@ -20,5 +20,5 @@ Open the eclipse_inst.ini file being part of the Eclipse Installer (on MacOS it 
 Run the eclipse installer with additional command line arguments:
 
 ```
-eclipse-inst -vmargs '-Doomph.redirection.setups=index:/->https://raw.githubusercontent.com/Minres/oomph-setups/master/'
+eclipse-inst -vmargs '-Doomph.redirection.setups=index:/->https://git.minres.com/Tooling/oomph-setups/raw/branch/master/'
 ```
