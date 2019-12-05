@@ -65,9 +65,7 @@
     <sourceLocator
         rootFolder="${git.clone.systemc.quickstart.location}"/>
   </setupTask>
-  <stream name="master"/>
-  <logicalProjectContainer
-      xsi:type="setup:ProjectCatalog"
-      href="index:/org.eclipse.setup#//@projectCatalogs[name='org.eclipse']"/>
+  <stream name="${git.stream}"
+      label="Stream to checkout"/>
   <description>A simple C++ CMake project to jump-start development of SystemC models and systems </description>
 </setup:Project>
