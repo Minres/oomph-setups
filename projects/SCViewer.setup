@@ -100,7 +100,7 @@
       name="Neon Platform">
     <description>Sets the RDL Editor target platform</description>
   </setupTask>
-  <stream name="${git-stream}"
+  <stream name="${git.stream}"
       label="Stream to checkout"/>
   <description>A lightweight tool to visualize VCD and transaction traces.</description>
 </setup:Project>
