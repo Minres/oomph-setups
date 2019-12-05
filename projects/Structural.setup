@@ -19,14 +19,14 @@
       name="Global Variables">
     <setupTask
         xsi:type="setup:VariableTask"
-        name="minres.git.user.id"
+        name="git.user.id"
         defaultValue="anonymous"
         label="User ID">
       <description>The user ID of the MINRES account</description>
     </setupTask>
     <setupTask
         xsi:type="setup:VariableTask"
-        name="minres-git-stream"
+        name="git.stream"
         label="Stream to checkout">
       <choice
           value="master"/>
@@ -79,7 +79,7 @@
       xsi:type="git:GitCloneTask"
       id="git.clone.Structural"
       filter=""
-      remoteURI="https://${minres.git.user.id}@minres.com/git/SystemC/Structural.git"
+      remoteURI="https://${git.user.id}@git.minres.com/VP-Tools/Structural.git"
       pushURI="">
     <description>${scope.project.label}</description>
   </setupTask>
@@ -107,7 +107,7 @@
       name="com.minres.structural.target">
     <description>Sets the Structural target platform</description>
   </setupTask>
-  <stream name="${minres-git-stream}"
+  <stream name="${git.stream}"
       label="Stream to checkout"/>
   <description>A Xtext based Structural editor with syntax highlighting and context sensitive help.</description>
 </setup:Project>

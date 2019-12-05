@@ -19,14 +19,14 @@
       name="Global Variables">
     <setupTask
         xsi:type="setup:VariableTask"
-        name="minres.git.user.id"
+        name="git.user.id"
         defaultValue=""
         label="User ID">
       <description>The user ID of the MINRES account</description>
     </setupTask>
     <setupTask
         xsi:type="setup:VariableTask"
-        name="minres-git-stream"
+        name="git.stream"
         label="Stream to checkout">
       <choice
           value="master"/>
@@ -89,7 +89,7 @@
       xsi:type="git:GitCloneTask"
       id="git.clone.mendel"
       filter=""
-      remoteURI="https://${minres.git.user.id}@minres.com/git/Mendel/mendel.git">
+      remoteURI="https://${git.user.id}@git.minres.com/Mendel/mendel.git">
     <description>${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -188,7 +188,7 @@
     </workingSet>
     <description>The dynamic working sets for ${scope.project.label}</description>
   </setupTask>
-  <stream name="${minres-git-stream}"
+  <stream name="${git.stream}"
       label="Stream to checkout">
     <description></description>
   </stream>
