@@ -376,25 +376,25 @@
           name="org.eclipse.mylyn.wikitext.sdk.feature.group"/>
     </setupTask>
     <version
-        name="photon"
-        label="Photon"
+        name="2019-12"
+        label="2019-12"
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="${scope.product.label} (${scope.product.version.label})">
         <requirement
             name="epp.package.cpp"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.platform.feature.group"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.rcp.feature.group"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <repository
-            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+            url="http://download.eclipse.org/technology/epp/packages/2019-12"/>
         <repository
-            url="http://download.eclipse.org/releases/photon"/>
+            url="http://download.eclipse.org/releases/2019-12"/>
         <repository
             url="http://www.janua.fr/update/"/>
         <repository
@@ -427,6 +427,38 @@
             url="http://download.eclipse.org/technology/epp/packages/2018-09"/>
         <repository
             url="http://download.eclipse.org/releases/2018-09/201809191002"/>
+        <repository
+            url="http://www.janua.fr/update/"/>
+        <repository
+            url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
+        <repository
+            url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+      </setupTask>
+    </version>
+    <version
+        name="photon"
+        label="Photon"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="${scope.product.label} (${scope.product.version.label})">
+        <requirement
+            name="epp.package.cpp"
+            versionRange="[4.8.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.8.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.8.0,5.0.0)"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+        <repository
+            url="http://download.eclipse.org/releases/photon"/>
         <repository
             url="http://www.janua.fr/update/"/>
         <repository
@@ -849,25 +881,25 @@
           name="org.eclipse.mylyn.wikitext.sdk.feature.group"/>
     </setupTask>
     <version
-        name="photon"
-        label="Photon"
+        name="2019-12"
+        label="2019-12"
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="${scope.product.label} (${scope.product.version.label})">
         <requirement
             name="epp.package.cpp"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.platform.feature.group"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.rcp.feature.group"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <repository
-            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+            url="http://download.eclipse.org/technology/epp/packages/2019-12"/>
         <repository
-            url="http://download.eclipse.org/releases/photon"/>
+            url="http://download.eclipse.org/releases/2019-12"/>
         <repository
             url="http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/"/>
         <repository
@@ -902,6 +934,40 @@
             url="http://download.eclipse.org/technology/epp/packages/2018-09"/>
         <repository
             url="http://download.eclipse.org/releases/2018-09/201809191002"/>
+        <repository
+            url="http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/"/>
+        <repository
+            url="http://www.janua.fr/update/"/>
+        <repository
+            url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
+        <repository
+            url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+      </setupTask>
+    </version>
+    <version
+        name="photon"
+        label="Photon"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="${scope.product.label} (${scope.product.version.label})">
+        <requirement
+            name="epp.package.cpp"
+            versionRange="[4.8.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.8.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.8.0,5.0.0)"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+        <repository
+            url="http://download.eclipse.org/releases/photon"/>
         <repository
             url="http://gnu-mcu-eclipse.netlify.com/v4-neon-updates/"/>
         <repository
@@ -1093,33 +1159,45 @@
           name="org.eclipse.mylyn.wikitext.editors_feature.feature.group"/>
     </setupTask>
     <version
-        name="photon"
-        label="Photon"
+        name="2019-12"
+        label="2019-12"
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="Eclipse DSL Tools (Photon)">
         <requirement
             name="epp.package.dsl"
-            versionRange="[4.8.0,4.9.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.platform.feature.group"
-            versionRange="[4.8.0,4.9.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.rcp.feature.group"
-            versionRange="[4.8.0,4.9.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.jdt.feature.group"
-            versionRange="[3.14.0,3.15.0)"/>
+            versionRange="[3.18.0,4.0.0)"/>
         <requirement
             name="org.eclipse.pde.feature.group"
-            versionRange="[3.13.0,3.15.0)"/>
+            versionRange="[3.14.0,4.0.0)"/>
+        <requirement
+            name="org.eclipse.emf.ecore.xcore.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.emf.mwe2.language.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.emf.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.epp.mpc.feature.group"/>
+        <requirement
+            name="org.eclipse.lsp4j.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.sdk.feature.group"/>
         <repository
-            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+            url="http://download.eclipse.org/technology/epp/packages/2019-12"/>
         <repository
-            url="http://download.eclipse.org/releases/photon"/>
+            url="http://download.eclipse.org/releases/2019-12"/>
         <repository
-            url="http://dist.springsource.org/release/GRECLIPSE/3.2.0/e4.8"/>
+            url="http://dist.springsource.org/release/GRECLIPSE/e4.14"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
@@ -1158,6 +1236,44 @@
             url="http://download.eclipse.org/releases/2018-09/201809191002"/>
         <repository
             url="http://dist.springsource.org/release/GRECLIPSE/3.2.0/e4.9"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
+        <repository
+            url="https://ecd-plugin.github.io/update"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+      </setupTask>
+    </version>
+    <version
+        name="photon"
+        label="Photon"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="Eclipse DSL Tools (Photon)">
+        <requirement
+            name="epp.package.dsl"
+            versionRange="[4.8.0,4.9.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.8.0,4.9.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.8.0,4.9.0)"/>
+        <requirement
+            name="org.eclipse.jdt.feature.group"
+            versionRange="[3.14.0,3.15.0)"/>
+        <requirement
+            name="org.eclipse.pde.feature.group"
+            versionRange="[3.13.0,3.15.0)"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+        <repository
+            url="http://download.eclipse.org/releases/photon"/>
+        <repository
+            url="http://dist.springsource.org/release/GRECLIPSE/3.2.0/e4.8"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
@@ -1349,33 +1465,45 @@
           name="org.eclipse.mylyn.wikitext.editors_feature.feature.group"/>
     </setupTask>
     <version
-        name="photon"
-        label="Photon"
+        name="2019-12"
+        label="2019-12"
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="Eclipse DSL Tools (Photon)">
         <requirement
             name="epp.package.dsl"
-            versionRange="[4.8.0,4.9.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.platform.feature.group"
-            versionRange="[4.8.0,4.9.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.rcp.feature.group"
-            versionRange="[4.8.0,4.9.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.jdt.feature.group"
-            versionRange="[3.14.0,3.15.0)"/>
+            versionRange="[3.18.0,4.0.0)"/>
         <requirement
             name="org.eclipse.pde.feature.group"
-            versionRange="[3.13.0,3.14.0)"/>
+            versionRange="[3.14.0,4.0.0)"/>
+        <requirement
+            name="org.eclipse.emf.ecore.xcore.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.emf.mwe2.language.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.emf.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.epp.mpc.feature.group"/>
+        <requirement
+            name="org.eclipse.lsp4j.sdk.feature.group"/>
+        <requirement
+            name="org.eclipse.xtext.sdk.feature.group"/>
         <repository
-            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+            url="http://download.eclipse.org/technology/epp/packages/2019-12"/>
         <repository
-            url="http://download.eclipse.org/releases/photon"/>
+            url="http://download.eclipse.org/releases/2019-12"/>
         <repository
-            url="http://dist.springsource.org/release/GRECLIPSE/3.2.0/e4.8"/>
+            url="http://dist.springsource.org/release/GRECLIPSE/e4.14"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
@@ -1412,6 +1540,42 @@
             url="http://download.eclipse.org/releases/2018-09/201809191002"/>
         <repository
             url="http://dist.springsource.org/release/GRECLIPSE/3.2.0/e4.9"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://ecd-plugin.github.io/update"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+      </setupTask>
+    </version>
+    <version
+        name="photon"
+        label="Photon"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="Eclipse DSL Tools (Photon)">
+        <requirement
+            name="epp.package.dsl"
+            versionRange="[4.8.0,4.9.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.8.0,4.9.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.8.0,4.9.0)"/>
+        <requirement
+            name="org.eclipse.jdt.feature.group"
+            versionRange="[3.14.0,3.15.0)"/>
+        <requirement
+            name="org.eclipse.pde.feature.group"
+            versionRange="[3.13.0,3.14.0)"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+        <repository
+            url="http://download.eclipse.org/releases/photon"/>
+        <repository
+            url="http://dist.springsource.org/release/GRECLIPSE/3.2.0/e4.8"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
@@ -1812,25 +1976,25 @@
           url="http://www.pydev.org/updates"/>
     </setupTask>
     <version
-        name="photon"
-        label="Photon"
+        name="2019-12"
+        label="2019-12"
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="${scope.product.label} (${scope.product.version.label})">
         <requirement
             name="epp.package.cpp"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.platform.feature.group"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <requirement
             name="org.eclipse.rcp.feature.group"
-            versionRange="[4.8.0,5.0.0)"/>
+            versionRange="[4.14.0,5.0.0)"/>
         <repository
-            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+            url="http://download.eclipse.org/technology/epp/packages/2019-12"/>
         <repository
-            url="http://download.eclipse.org/releases/photon"/>
+            url="http://download.eclipse.org/releases/2019-12"/>
         <repository
             url="http://www.janua.fr/update/"/>
         <repository
@@ -1863,6 +2027,38 @@
             url="http://download.eclipse.org/technology/epp/packages/2018-09"/>
         <repository
             url="http://download.eclipse.org/releases/2018-09/201809191002"/>
+        <repository
+            url="http://www.janua.fr/update/"/>
+        <repository
+            url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
+        <repository
+            url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+      </setupTask>
+    </version>
+    <version
+        name="photon"
+        label="Photon"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="${scope.product.label} (${scope.product.version.label})">
+        <requirement
+            name="epp.package.cpp"
+            versionRange="[4.8.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.8.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.8.0,5.0.0)"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/photon"/>
+        <repository
+            url="http://download.eclipse.org/releases/photon"/>
         <repository
             url="http://www.janua.fr/update/"/>
         <repository
