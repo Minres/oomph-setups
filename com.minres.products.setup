@@ -1197,7 +1197,7 @@
         <repository
             url="http://download.eclipse.org/releases/2019-12"/>
         <repository
-            url="http://dist.springsource.org/release/GRECLIPSE/e4.14"/>
+            url="https://dist.springsource.org/snapshot/GRECLIPSE/e4.14/"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
@@ -1503,7 +1503,7 @@
         <repository
             url="http://download.eclipse.org/releases/2019-12"/>
         <repository
-            url="http://dist.springsource.org/release/GRECLIPSE/e4.14"/>
+            url="https://dist.springsource.org/snapshot/GRECLIPSE/e4.14/"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
