@@ -29,18 +29,7 @@
         url="${oomph.update.url}"/>
   </setupTask>
   <product name="minres.cdt"
-      label="MINRES C/C++ Development Tools">
-    <annotation
-        source="http://www.eclipse.org/oomph/setup/BrandingInfo">
-      <detail
-          key="folderName.macosx">
-        <value>MINRES-CDT</value>
-      </detail>
-      <detail
-          key="folderName">
-        <value>minres-cdt</value>
-      </detail>
-    </annotation>
+      label="MINRES C/C++ Tools">
     <setupTask
         xsi:type="setup:CompoundTask"
         name="User Preferences">
@@ -225,14 +214,6 @@
       </setupTask>
       <setupTask
           xsi:type="setup:CompoundTask"
-          name="org.eclipse.e4.ui.css.swt.theme">
-        <setupTask
-            xsi:type="setup:PreferenceTask"
-            key="/instance/org.eclipse.e4.ui.css.swt.theme/themeid"
-            value="org.eclipse.e4.ui.css.theme.e4_default"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:CompoundTask"
           name="org.eclipse.e4.ui.workbench.renderers.swt">
         <setupTask
             xsi:type="setup:PreferenceTask"
@@ -305,19 +286,26 @@
       <requirement
           name="org.eclipse.egit.feature.group"/>
       <requirement
-          name="org.eclipse.linuxtools.cdt.libhover.devhelp.feature.feature.group"/>
+          name="org.eclipse.linuxtools.cdt.libhover.devhelp.feature.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.cdt.libhover.feature.feature.group"/>
+          name="org.eclipse.linuxtools.cdt.libhover.feature.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.changelog.c.feature.group"/>
+          name="org.eclipse.linuxtools.changelog.c.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.gcov.feature.group"/>
+          name="org.eclipse.linuxtools.gcov.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.gprof.feature.feature.group"/>
+          name="org.eclipse.linuxtools.gprof.feature.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.rpm.feature.group"/>
+          name="org.eclipse.linuxtools.rpm.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.valgrind.feature.group"/>
+          name="org.eclipse.linuxtools.valgrind.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
           name="org.eclipse.mylyn.bugzilla_feature.feature.group"/>
       <requirement
@@ -345,10 +333,6 @@
       <requirement
           name="org.eclipse.tracecompass.lttng2.ust.feature.group"/>
       <requirement
-          name="de.marw.cdt.cmake.feature.group"/>
-      <requirement
-          name="com.cthing.cmakeed.feature.feature.group"/>
-      <requirement
           name="org.eclipse.wst.jsdt.feature.feature.group"/>
       <requirement
           name="org.eclipse.wst.xml_ui.feature.feature.group"/>
@@ -356,12 +340,7 @@
           name="org.eclipse.linuxtools.callgraph.feature.feature.group"
           filter="(osgi.os=linux)"/>
       <requirement
-          name="com.eclipserunner.feature.feature.group"/>
-      <requirement
           name="org.eclipse.egit.gitflow.feature.feature.group"/>
-      <requirement
-          name="net.resheim.eclipse.launcher.feature.group"
-          filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
       <requirement
           name="org.eclipse.cdt.mylyn.feature.group"/>
       <requirement
@@ -375,33 +354,33 @@
       <requirement
           name="org.eclipse.mylyn.wikitext.sdk.feature.group"/>
       <requirement
+          name="de.marw.cdt.cmake.feature.group"/>
+      <requirement
+          name="com.cthing.cmakeed.feature.feature.group"/>
+      <requirement
+          name="net.resheim.eclipse.launcher.feature.group"
+          filter="(osgi.os=macosx)"/>
+      <requirement
           name="net.mihai-nita.ansicon.feature.group"/>
+      <requirement
+          name="com.eclipserunner.feature.feature.group"/>
       <repository
           url="http://www.mihai-nita.net/eclipse"/>
+      <repository
+          url="https://resheim.net/p2/eclipse-launcher/"/>
+      <repository
+          url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+      <repository
+          url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
+      <repository
+          url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
+      <repository
+          url="http://www.janua.fr/update/"/>
     </setupTask>
     <version
         name="2020-03"
         label="2020-03"
         requiredJavaVersion="1.8">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/BrandingInfo">
-        <detail
-            key="status">
-          <value>current</value>
-        </detail>
-        <detail
-            key="siteURI">
-          <value>https://www.eclipse.org/downloads/packages/release/2020-03/r/eclipse-ide-cc-developers-includes-incubating-components</value>
-        </detail>
-        <detail
-            key="incubating">
-          <value>true</value>
-        </detail>
-        <detail
-            key="shortcut">
-          <value>Eclipse IDE for C/C++ Developers - 2020-03</value>
-        </detail>
-      </annotation>
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="Eclipse IDE for C/C++ Developers (2020-03)">
@@ -417,7 +396,7 @@
         <repository
             url="http://download.eclipse.org/technology/epp/packages/2020-03"/>
         <repository
-            url="http://download.eclipse.org/releases/2020-03/202003181000">
+            url="http://download.eclipse.org/releases/2020-03">
           <annotation
               source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
         </repository>
@@ -443,16 +422,6 @@
             url="http://download.eclipse.org/technology/epp/packages/2019-12"/>
         <repository
             url="http://download.eclipse.org/releases/2019-12"/>
-        <repository
-            url="http://www.janua.fr/update/"/>
-        <repository
-            url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
-        <repository
-            url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
-        <repository
-            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
-        <repository
-            url="https://resheim.net/p2/eclipse-launcher/"/>
       </setupTask>
     </version>
     <version
@@ -474,34 +443,13 @@
         <repository
             url="http://download.eclipse.org/technology/epp/packages/2018-09"/>
         <repository
-            url="http://download.eclipse.org/releases/2018-09/201809191002"/>
-        <repository
-            url="http://www.janua.fr/update/"/>
-        <repository
-            url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
-        <repository
-            url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
-        <repository
-            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
-        <repository
-            url="https://resheim.net/p2/eclipse-launcher/"/>
+            url="http://download.eclipse.org/releases/2018-09"/>
       </setupTask>
     </version>
     <description>MINRES CDT provides the Eclipse CDT plus usefull extensions.</description>
   </product>
-  <product name="minres.cdt"
-      label="MINRES C/C++ Development Tools w. Python">
-    <annotation
-        source="http://www.eclipse.org/oomph/setup/BrandingInfo">
-      <detail
-          key="folderName.macosx">
-        <value>MINRES-CDT</value>
-      </detail>
-      <detail
-          key="folderName">
-        <value>minres-cdt</value>
-      </detail>
-    </annotation>
+  <product name="minres.cdt-python"
+      label="MINRES C/C++ &amp; Python Tools">
     <setupTask
         xsi:type="setup:CompoundTask"
         name="User Preferences">
@@ -686,14 +634,6 @@
       </setupTask>
       <setupTask
           xsi:type="setup:CompoundTask"
-          name="org.eclipse.e4.ui.css.swt.theme">
-        <setupTask
-            xsi:type="setup:PreferenceTask"
-            key="/instance/org.eclipse.e4.ui.css.swt.theme/themeid"
-            value="org.eclipse.e4.ui.css.theme.e4_default"/>
-      </setupTask>
-      <setupTask
-          xsi:type="setup:CompoundTask"
           name="org.eclipse.e4.ui.workbench.renderers.swt">
         <setupTask
             xsi:type="setup:PreferenceTask"
@@ -766,19 +706,26 @@
       <requirement
           name="org.eclipse.egit.feature.group"/>
       <requirement
-          name="org.eclipse.linuxtools.cdt.libhover.devhelp.feature.feature.group"/>
+          name="org.eclipse.linuxtools.cdt.libhover.devhelp.feature.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.cdt.libhover.feature.feature.group"/>
+          name="org.eclipse.linuxtools.cdt.libhover.feature.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.changelog.c.feature.group"/>
+          name="org.eclipse.linuxtools.changelog.c.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.gcov.feature.group"/>
+          name="org.eclipse.linuxtools.gcov.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.gprof.feature.feature.group"/>
+          name="org.eclipse.linuxtools.gprof.feature.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.rpm.feature.group"/>
+          name="org.eclipse.linuxtools.rpm.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.linuxtools.valgrind.feature.group"/>
+          name="org.eclipse.linuxtools.valgrind.feature.group"
+          filter="(osgi.os=linux)"/>
       <requirement
           name="org.eclipse.mylyn.bugzilla_feature.feature.group"/>
       <requirement
@@ -806,10 +753,6 @@
       <requirement
           name="org.eclipse.tracecompass.lttng2.ust.feature.group"/>
       <requirement
-          name="de.marw.cdt.cmake.feature.group"/>
-      <requirement
-          name="com.cthing.cmakeed.feature.feature.group"/>
-      <requirement
           name="org.eclipse.wst.jsdt.feature.feature.group"/>
       <requirement
           name="org.eclipse.wst.xml_ui.feature.feature.group"/>
@@ -817,12 +760,7 @@
           name="org.eclipse.linuxtools.callgraph.feature.feature.group"
           filter="(osgi.os=linux)"/>
       <requirement
-          name="com.eclipserunner.feature.feature.group"/>
-      <requirement
           name="org.eclipse.egit.gitflow.feature.feature.group"/>
-      <requirement
-          name="net.resheim.eclipse.launcher.feature.group"
-          filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
       <requirement
           name="org.eclipse.cdt.mylyn.feature.group"/>
       <requirement
@@ -840,35 +778,35 @@
       <requirement
           name="org.python.pydev.mylyn.feature.feature.group"/>
       <requirement
+          name="de.marw.cdt.cmake.feature.group"/>
+      <requirement
+          name="com.cthing.cmakeed.feature.feature.group"/>
+      <requirement
+          name="net.resheim.eclipse.launcher.feature.group"
+          filter="(osgi.os=macosx)"/>
+      <requirement
           name="net.mihai-nita.ansicon.feature.group"/>
+      <requirement
+          name="com.eclipserunner.feature.feature.group"/>
       <repository
           url="http://www.pydev.org/updates"/>
       <repository
           url="http://www.mihai-nita.net/eclipse"/>
+      <repository
+          url="https://resheim.net/p2/eclipse-launcher/"/>
+      <repository
+          url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+      <repository
+          url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
+      <repository
+          url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
+      <repository
+          url="http://www.janua.fr/update/"/>
     </setupTask>
     <version
         name="2020-03"
         label="2020-03"
         requiredJavaVersion="1.8">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/BrandingInfo">
-        <detail
-            key="status">
-          <value>current</value>
-        </detail>
-        <detail
-            key="siteURI">
-          <value>https://www.eclipse.org/downloads/packages/release/2020-03/r/eclipse-ide-cc-developers-includes-incubating-components</value>
-        </detail>
-        <detail
-            key="incubating">
-          <value>true</value>
-        </detail>
-        <detail
-            key="shortcut">
-          <value>Eclipse IDE for C/C++ Developers - 2020-03</value>
-        </detail>
-      </annotation>
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="Eclipse IDE for C/C++ Developers (2020-03)">
@@ -884,7 +822,7 @@
         <repository
             url="http://download.eclipse.org/technology/epp/packages/2020-03"/>
         <repository
-            url="http://download.eclipse.org/releases/2020-03/202003181000">
+            url="http://download.eclipse.org/releases/2020-03">
           <annotation
               source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
         </repository>
@@ -910,16 +848,6 @@
             url="http://download.eclipse.org/technology/epp/packages/2019-12"/>
         <repository
             url="http://download.eclipse.org/releases/2019-12"/>
-        <repository
-            url="http://www.janua.fr/update/"/>
-        <repository
-            url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
-        <repository
-            url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
-        <repository
-            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
-        <repository
-            url="https://resheim.net/p2/eclipse-launcher/"/>
       </setupTask>
     </version>
     <version
@@ -941,30 +869,13 @@
         <repository
             url="http://download.eclipse.org/technology/epp/packages/2018-09"/>
         <repository
-            url="http://download.eclipse.org/releases/2018-09/201809191002"/>
-        <repository
-            url="http://www.janua.fr/update/"/>
-        <repository
-            url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
-        <repository
-            url="https://raw.githubusercontent.com/15knots/cmakeed/master/cmakeed-update/"/>
-        <repository
-            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
-        <repository
-            url="https://resheim.net/p2/eclipse-launcher/"/>
+            url="http://download.eclipse.org/releases/2018-09"/>
       </setupTask>
     </version>
     <description>MINRES CDT provides the Eclipse CDT plus usefull extensions.</description>
   </product>
-  <product name="epp.package.dsl"
+  <product name="minres.dsl"
       label="MINRES Java &amp; DSL Tools">
-    <annotation
-        source="http://www.eclipse.org/oomph/setup/BrandingInfo">
-      <detail
-          key="folderName">
-        <value>MINRES-DSL</value>
-      </detail>
-    </annotation>
     <setupTask
         xsi:type="setup.p2:P2Task"
         label="${scope.product.label} (${scope.product.version.label})">
@@ -993,11 +904,7 @@
       <requirement
           name="org.codehaus.groovy.m2eclipse.feature.feature.group"/>
       <requirement
-          name="com.eclipserunner.feature.feature.group"/>
-      <requirement
           name="org.eclipse.egit.gitflow.feature.feature.group"/>
-      <requirement
-          name="org.eclipse.recommenders.rcp.feature.feature.group"/>
       <requirement
           name="org.eclipse.linuxtools.javadocs.feature.feature.group"/>
       <requirement
@@ -1010,18 +917,6 @@
           name="org.eclipse.emf.mwe2.language.sdk.feature.group"/>
       <requirement
           name="org.eclipse.emf.mwe.sdk.feature.group"/>
-      <requirement
-          name="org.sf.feeling.decompiler.feature.group"/>
-      <requirement
-          name="org.sf.feeling.decompiler.cfr.feature.group"/>
-      <requirement
-          name="org.sf.feeling.decompiler.jad.feature.group"
-          filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
-      <requirement
-          name="org.sf.feeling.decompiler.jd.feature.group"
-          filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
-      <requirement
-          name="org.sf.feeling.decompiler.procyon.feature.group"/>
       <requirement
           name="org.eclipse.gmf.runtime.notation.feature.group"/>
       <requirement
@@ -1059,10 +954,6 @@
       <requirement
           name="org.eclipse.sirius.aql.feature.group"/>
       <requirement
-          name="org.eclipse.mylyn.wikitext_feature.feature.group"/>
-      <requirement
-          name="org.eclipse.mylyn.wikitext.editors_feature.feature.group"/>
-      <requirement
           name="org.eclipse.emf.ecore.xcore.lib.feature.group"/>
       <requirement
           name="org.eclipse.emf.ecore.xcore.feature.group"/>
@@ -1071,12 +962,7 @@
       <requirement
           name="org.eclipse.emf.ecore.xcore.ui.feature.group"/>
       <requirement
-          name="net.resheim.eclipse.launcher.feature.group"
-          filter="(&amp;(osgi.arch=x86_64)(osgi.os=macosx)(osgi.ws=cocoa))"/>
-      <requirement
           name="org.eclipse.pde.feature.group"/>
-      <requirement
-          name="org.eclipse.cdt.mylyn.feature.group"/>
       <requirement
           name="org.eclipse.mylyn.ide_feature.feature.group"/>
       <requirement
@@ -1093,26 +979,98 @@
           name="org.eclipse.mylyn.wikitext_feature.feature.group"/>
       <requirement
           name="org.eclipse.mylyn.wikitext.editors_feature.feature.group"/>
+      <requirement
+          name="org.sf.feeling.decompiler.feature.group"/>
+      <requirement
+          name="org.sf.feeling.decompiler.cfr.feature.group"/>
+      <requirement
+          name="org.sf.feeling.decompiler.jad.feature.group"
+          filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+      <requirement
+          name="org.sf.feeling.decompiler.jd.feature.group"
+          filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+      <requirement
+          name="org.sf.feeling.decompiler.procyon.feature.group"/>
+      <requirement
+          name="com.eclipserunner.feature.feature.group"/>
+      <requirement
+          name="net.resheim.eclipse.launcher.feature.group"
+          filter="(osgi.os=macosx)"/>
+      <repository
+          url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+      <repository
+          url="https://ecd-plugin.github.io/update"/>
+      <repository
+          url="https://resheim.net/p2/eclipse-launcher/"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="User Preferences">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/UserPreferences">
+        <detail
+            key="/instance/org.eclipse.e4.ui.workbench.renderers.swt/themeEnabled">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.ui.editors/printMarginColumn">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.ui/SHOW_MEMORY_MONITOR">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.ui.editors/printMargin">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.e4.ui.css.swt.theme/themeid">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.e4.ui.workbench.renderers.swt/enableMRU">
+          <value>record</value>
+        </detail>
+      </annotation>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.e4.ui.workbench.renderers.swt">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.e4.ui.workbench.renderers.swt/enableMRU"
+            value="true"/>
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.e4.ui.workbench.renderers.swt/themeEnabled"
+            value="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.ui">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui/SHOW_MEMORY_MONITOR"
+            value="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.ui.editors">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui.editors/printMargin"
+            value="true"/>
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui.editors/printMarginColumn"
+            value="120"/>
+      </setupTask>
+      <description></description>
     </setupTask>
     <version
         name="2020-03"
         label="2020-03"
         requiredJavaVersion="1.8">
-      <annotation
-          source="http://www.eclipse.org/oomph/setup/BrandingInfo">
-        <detail
-            key="status">
-          <value>current</value>
-        </detail>
-        <detail
-            key="siteURI">
-          <value>https://www.eclipse.org/downloads/packages/release/2020-03/r/eclipse-ide-java-and-dsl-developers</value>
-        </detail>
-        <detail
-            key="shortcut">
-          <value>Eclipse IDE for Java and DSL Developers - 2020-03</value>
-        </detail>
-      </annotation>
       <setupTask
           xsi:type="setup.p2:P2Task"
           label="Eclipse DSL Tools (2020-03)">
@@ -1154,14 +1112,6 @@
         </repository>
         <repository
             url="https://dist.springsource.org/release/GRECLIPSE/e4.15"/>
-        <repository
-            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
-        <repository
-            url="https://ecd-plugin.github.io/update"/>
-        <repository
-            url="https://resheim.net/p2/eclipse-launcher/"/>
-        <repository
-            url="https://dist.springsource.org/release/GRECLIPSE/e4.14"/>
       </setupTask>
     </version>
     <version
@@ -1203,14 +1153,6 @@
         <repository
             url="http://download.eclipse.org/releases/2019-12"/>
         <repository
-            url="https://dist.springsource.org/release/GRECLIPSE/e4.13"/>
-        <repository
-            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
-        <repository
-            url="https://ecd-plugin.github.io/update"/>
-        <repository
-            url="https://resheim.net/p2/eclipse-launcher/"/>
-        <repository
             url="https://dist.springsource.org/release/GRECLIPSE/e4.14"/>
       </setupTask>
     </version>
@@ -1242,15 +1184,321 @@
             url="http://download.eclipse.org/releases/2018-09/201809191002"/>
         <repository
             url="https://dist.springsource.org/release/GRECLIPSE/e4.9"/>
-        <repository
-            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
-        <repository
-            url="https://ecd-plugin.github.io/update"/>
-        <repository
-            url="https://resheim.net/p2/eclipse-launcher/"/>
       </setupTask>
     </version>
     <description>The essential tools for Java and DSL developers, including a Java &amp; Xtend IDE, a DSL Framework (Xtext), a Git client, XML Editor, and Maven integration.</description>
+  </product>
+  <product name="minres.scala"
+      label="MINRES Java &amp; Scala Tools">
+    <setupTask
+        xsi:type="setup.p2:P2Task"
+        label="${scope.product.label} (${scope.product.version.label})">
+      <requirement
+          name="org.sf.feeling.decompiler.feature.group"/>
+      <requirement
+          name="org.sf.feeling.decompiler.cfr.feature.group"/>
+      <requirement
+          name="org.sf.feeling.decompiler.jad.feature.group"
+          filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+      <requirement
+          name="org.sf.feeling.decompiler.jd.feature.group"
+          filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
+      <requirement
+          name="org.sf.feeling.decompiler.procyon.feature.group"/>
+      <requirement
+          name="com.eclipserunner.feature.feature.group"/>
+      <requirement
+          name="net.resheim.eclipse.launcher.feature.group"
+          filter="(osgi.os=macosx)"/>
+      <requirement
+          name="org.scala-ide.sdt.weaving.feature.feature.group"/>
+      <requirement
+          name="org.scala-ide.play2.feature.feature.group"/>
+      <requirement
+          name="org.scala-ide.scala212.feature.feature.group"/>
+      <requirement
+          name="org.scala-ide.sdt.feature.feature.group"/>
+      <requirement
+          name="org.scala-ide.sdt.dev.feature.feature.group"/>
+      <requirement
+          name="org.scala.tools.eclipse.search.feature.feature.group"/>
+      <requirement
+          name="org.scalaide.worksheet.feature.feature.group"/>
+      <requirement
+          name="org.scala-ide.sdt.scalatest.feature.feature.group"/>
+      <requirement
+          name="org.scala-ide.zinc.feature.feature.group"/>
+      <repository
+          url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+      <repository
+          url="https://ecd-plugin.github.io/update"/>
+      <repository
+          url="https://resheim.net/p2/eclipse-launcher/"/>
+      <repository
+          url="http://download.scala-ide.org/sdk/lithium/e47/scala212/stable/site"/>
+    </setupTask>
+    <setupTask
+        xsi:type="setup:CompoundTask"
+        name="User Preferences">
+      <annotation
+          source="http://www.eclipse.org/oomph/setup/UserPreferences">
+        <detail
+            key="/instance/org.eclipse.e4.ui.workbench.renderers.swt/themeEnabled">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.ui.editors/printMarginColumn">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.ui/SHOW_MEMORY_MONITOR">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.ui.editors/printMargin">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.e4.ui.css.swt.theme/themeid">
+          <value>record</value>
+        </detail>
+        <detail
+            key="/instance/org.eclipse.e4.ui.workbench.renderers.swt/enableMRU">
+          <value>record</value>
+        </detail>
+      </annotation>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.e4.ui.workbench.renderers.swt">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.e4.ui.workbench.renderers.swt/enableMRU"
+            value="true"/>
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.e4.ui.workbench.renderers.swt/themeEnabled"
+            value="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.ui">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui/SHOW_MEMORY_MONITOR"
+            value="true"/>
+      </setupTask>
+      <setupTask
+          xsi:type="setup:CompoundTask"
+          name="org.eclipse.ui.editors">
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui.editors/printMargin"
+            value="true"/>
+        <setupTask
+            xsi:type="setup:PreferenceTask"
+            key="/instance/org.eclipse.ui.editors/printMarginColumn"
+            value="120"/>
+      </setupTask>
+      <description></description>
+    </setupTask>
+    <version
+        name="2020-03"
+        label="2020-03"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="Eclipse IDE for Java Developers (2020-03)">
+        <requirement
+            name="epp.package.java"
+            versionRange="[4.15.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.15.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.15.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.buildship.feature.group"/>
+        <requirement
+            name="org.eclipse.eclemma.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.egit.feature.group"/>
+        <requirement
+            name="org.eclipse.egit.mylyn.feature.group"/>
+        <requirement
+            name="org.eclipse.epp.mpc.feature.group"/>
+        <requirement
+            name="org.eclipse.jdt.feature.group"/>
+        <requirement
+            name="org.eclipse.jgit.feature.group"/>
+        <requirement
+            name="org.eclipse.m2e.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.m2e.logback.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.bugzilla_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.context_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.git.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.hudson.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.ide_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.java_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.wikitext_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.tips.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/2020-03"/>
+        <repository
+            url="http://download.eclipse.org/releases/2020-03/202003181000">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
+        </repository>
+      </setupTask>
+    </version>
+    <version
+        name="2019-12"
+        label="2019-12"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="Eclipse IDE for Java Developers (2019-12)">
+        <requirement
+            name="epp.package.java"
+            versionRange="[4.14.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.14.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.14.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.buildship.feature.group"/>
+        <requirement
+            name="org.eclipse.eclemma.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.egit.feature.group"/>
+        <requirement
+            name="org.eclipse.egit.mylyn.feature.group"/>
+        <requirement
+            name="org.eclipse.epp.mpc.feature.group"/>
+        <requirement
+            name="org.eclipse.jdt.feature.group"/>
+        <requirement
+            name="org.eclipse.jgit.feature.group"/>
+        <requirement
+            name="org.eclipse.m2e.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.m2e.logback.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.bugzilla_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.context_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.git.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.hudson.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.ide_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.java_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.wikitext_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.tips.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/2019-12"/>
+        <repository
+            url="http://download.eclipse.org/releases/2019-12/201912181000">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
+        </repository>
+      </setupTask>
+    </version>
+    <version
+        name="2018-09"
+        label="2018-09"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="Eclipse IDE for Java Developers (2018-09)">
+        <requirement
+            name="epp.package.java"
+            versionRange="[4.9.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.9.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.9.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.buildship.feature.group"/>
+        <requirement
+            name="org.eclipse.eclemma.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.egit.feature.group"/>
+        <requirement
+            name="org.eclipse.egit.mylyn.feature.group"/>
+        <requirement
+            name="org.eclipse.epp.mpc.feature.group"/>
+        <requirement
+            name="org.eclipse.jdt.feature.group"/>
+        <requirement
+            name="org.eclipse.jgit.feature.group"/>
+        <requirement
+            name="org.eclipse.m2e.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.m2e.logback.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.bugzilla_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.context_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.git.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.hudson.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.ide_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.java_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.wikitext_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.recommenders.mylyn.rcp.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.recommenders.news.rcp.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.recommenders.rcp.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.recommenders.snipmatch.rcp.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.tips.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/2018-09"/>
+        <repository
+            url="http://download.eclipse.org/releases/2018-09/201809191002">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
+        </repository>
+      </setupTask>
+    </version>
+    <description>The essential tools for any Scala developer, including a Scal IDE, a Git client, XML Editor, Mylyn, Maven and Gradle integration</description>
   </product>
   <description>MINRES Tools provides cool products.</description>
 </setup:ProductCatalog>
