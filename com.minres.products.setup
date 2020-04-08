@@ -408,7 +408,7 @@
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="${scope.product.label} (${scope.product.version.label})">
+          label="Eclipse IDE for C/C++ Developers (2018-12)">
         <requirement
             name="epp.package.cpp"
             versionRange="[4.14.0,5.0.0)"/>
@@ -430,7 +430,7 @@
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="${scope.product.label} (${scope.product.version.label})">
+          label="Eclipse IDE for C/C++ Developers (2018-09)">
         <requirement
             name="epp.package.cpp"
             versionRange="[4.8.0,5.0.0)"/>
@@ -834,7 +834,7 @@
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="${scope.product.label} (${scope.product.version.label})">
+          label="Eclipse IDE for C/C++ Developers (2018-12)">
         <requirement
             name="epp.package.cpp"
             versionRange="[4.14.0,5.0.0)"/>
@@ -856,7 +856,7 @@
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="${scope.product.label} (${scope.product.version.label})">
+          label="Eclipse IDE for C/C++ Developers (2018-09)">
         <requirement
             name="epp.package.cpp"
             versionRange="[4.8.0,5.0.0)"/>
@@ -1073,7 +1073,7 @@
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="Eclipse DSL Tools (2020-03)">
+          label="Eclipse IDE for Java Developers (2020-03)">
         <requirement
             name="epp.package.dsl"
             versionRange="[4.15.0,5.0.0)"/>
@@ -1120,7 +1120,7 @@
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="Eclipse DSL Tools (Photon)">
+          label="Eclipse IDE for Java Developers (2019-12)">
         <requirement
             name="epp.package.dsl"
             versionRange="[4.14.0,5.0.0)"/>
@@ -1162,7 +1162,7 @@
         requiredJavaVersion="1.8">
       <setupTask
           xsi:type="setup.p2:P2Task"
-          label="Eclipse DSL Tools (Photon)">
+          label="Eclipse IDE for Java Developers (2018-09)">
         <requirement
             name="epp.package.dsl"
             versionRange="[4.9.0,4.10.0)"/>
