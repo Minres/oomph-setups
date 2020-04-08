@@ -1152,6 +1152,16 @@
           <annotation
               source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
         </repository>
+        <repository
+            url="https://dist.springsource.org/release/GRECLIPSE/e4.15"/>
+        <repository
+            url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+        <repository
+            url="https://ecd-plugin.github.io/update"/>
+        <repository
+            url="https://resheim.net/p2/eclipse-launcher/"/>
+        <repository
+            url="https://dist.springsource.org/release/GRECLIPSE/e4.14"/>
       </setupTask>
     </version>
     <version
@@ -1200,6 +1210,8 @@
             url="https://ecd-plugin.github.io/update"/>
         <repository
             url="https://resheim.net/p2/eclipse-launcher/"/>
+        <repository
+            url="https://dist.springsource.org/release/GRECLIPSE/e4.14"/>
       </setupTask>
     </version>
     <version
@@ -1229,7 +1241,7 @@
         <repository
             url="http://download.eclipse.org/releases/2018-09/201809191002"/>
         <repository
-            url="http://dist.springsource.org/release/GRECLIPSE/3.2.0/e4.9"/>
+            url="https://dist.springsource.org/release/GRECLIPSE/e4.9"/>
         <repository
             url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
         <repository
