@@ -66,8 +66,7 @@
   <setupTask
       xsi:type="setup.p2:P2Task">
     <requirement
-        name="org.eclipse.xtext.sdk.feature.group"
-        versionRange="[2.14.0,2.99.0]"/>
+        name="org.eclipse.xtext.sdk.feature.group"/>
     <repository
         url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>

@@ -60,7 +60,7 @@
   <setupTask
       xsi:type="setup:VariableTask"
       name="eclipse.target.platform"
-      value="None"
+      value="Photon"
       defaultValue="Neon"
       storageURI="scope://Workspace"/>
   <setupTask
@@ -69,6 +69,20 @@
         name="org.eclipse.pde.feature.group"/>
     <requirement
         name="org.eclipse.e4.core.tools.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.eclipse.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.jdt.patch.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy25.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy30.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.compilerless.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.headless.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.m2eclipse.feature.feature.group"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
   </setupTask>
   <setupTask
@@ -99,7 +113,7 @@
   </setupTask>
   <setupTask
       xsi:type="pde:TargetPlatformTask"
-      name="Neon Platform">
+      name="Target Platform">
     <description>Sets the RDL Editor target platform</description>
   </setupTask>
   <stream name="${git.stream}"

@@ -65,8 +65,7 @@
   <setupTask
       xsi:type="setup.p2:P2Task">
     <requirement
-        name="org.eclipse.xtext.sdk.feature.group"
-        versionRange="[2.13.0,2.99.0]"/>
+        name="org.eclipse.xtext.sdk.feature.group"/>
     <requirement
         name="org.eclipse.emf.ecore.xcore.sdk.feature.group"/>
     <requirement

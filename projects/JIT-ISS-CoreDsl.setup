@@ -66,8 +66,21 @@
   <setupTask
       xsi:type="setup.p2:P2Task">
     <requirement
-        name="org.eclipse.xtext.sdk.feature.group"
-        versionRange="[2.13.0,2.99.0]"/>
+        name="org.eclipse.xtext.sdk.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.eclipse.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.jdt.patch.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy25.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy30.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.compilerless.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.headless.feature.feature.group"/>
+    <requirement
+        name="org.codehaus.groovy.m2eclipse.feature.feature.group"/>
     <repository
         url="http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/"/>
     <description>Install the tools needed in the IDE to work with the source code for ${scope.project.label}</description>
