@@ -25,8 +25,19 @@
       xsi:type="setup.p2:P2Task">
     <requirement
         name="org.eclipse.oomph.setup.feature.group"/>
+    <requirement
+        name="org.eclipse.egit.gitflow.feature.feature.group"/>
+    <requirement
+        name="net.resheim.eclipse.launcher.feature.group"
+        filter="(osgi.os=macosx)"/>
+    <requirement
+        name="com.eclipserunner.feature.feature.group"/>
     <repository
         url="${oomph.update.url}"/>
+    <repository
+        url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
+    <repository
+        url="https://resheim.net/p2/eclipse-launcher/"/>
   </setupTask>
   <setupTask
       xsi:type="setup:CompoundTask"
@@ -348,8 +359,6 @@
           name="org.eclipse.linuxtools.callgraph.feature.feature.group"
           filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.egit.gitflow.feature.feature.group"/>
-      <requirement
           name="org.eclipse.cdt.mylyn.feature.group"/>
       <requirement
           name="org.eclipse.mylyn.ide_feature.feature.group"/>
@@ -366,18 +375,9 @@
       <requirement
           name="com.cthing.cmakeed.feature.feature.group"/>
       <requirement
-          name="net.resheim.eclipse.launcher.feature.group"
-          filter="(osgi.os=macosx)"/>
-      <requirement
           name="net.mihai-nita.ansicon.feature.group"/>
-      <requirement
-          name="com.eclipserunner.feature.feature.group"/>
       <repository
           url="http://www.mihai-nita.net/eclipse"/>
-      <repository
-          url="https://resheim.net/p2/eclipse-launcher/"/>
-      <repository
-          url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
       <repository
           url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
       <repository
@@ -933,8 +933,6 @@
           name="org.eclipse.linuxtools.callgraph.feature.feature.group"
           filter="(osgi.os=linux)"/>
       <requirement
-          name="org.eclipse.egit.gitflow.feature.feature.group"/>
-      <requirement
           name="org.eclipse.cdt.mylyn.feature.group"/>
       <requirement
           name="org.eclipse.mylyn.ide_feature.feature.group"/>
@@ -955,20 +953,11 @@
       <requirement
           name="com.cthing.cmakeed.feature.feature.group"/>
       <requirement
-          name="net.resheim.eclipse.launcher.feature.group"
-          filter="(osgi.os=macosx)"/>
-      <requirement
           name="net.mihai-nita.ansicon.feature.group"/>
-      <requirement
-          name="com.eclipserunner.feature.feature.group"/>
       <repository
           url="http://www.pydev.org/updates"/>
       <repository
           url="http://www.mihai-nita.net/eclipse"/>
-      <repository
-          url="https://resheim.net/p2/eclipse-launcher/"/>
-      <repository
-          url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
       <repository
           url="https://raw.githubusercontent.com/15knots/cmake4eclipse/master/releng/comp-update/"/>
       <repository
@@ -1192,8 +1181,6 @@
       <requirement
           name="org.codehaus.groovy.m2eclipse.feature.feature.group"/>
       <requirement
-          name="org.eclipse.egit.gitflow.feature.feature.group"/>
-      <requirement
           name="org.eclipse.linuxtools.javadocs.feature.feature.group"/>
       <requirement
           name="org.eclipse.jgit.feature.group"/>
@@ -1279,17 +1266,8 @@
           filter="(&amp;(|(osgi.arch=x86)(osgi.arch=x86_64))(|(osgi.os=linux)(osgi.os=macosx)(osgi.os=win32)))"/>
       <requirement
           name="org.sf.feeling.decompiler.procyon.feature.group"/>
-      <requirement
-          name="com.eclipserunner.feature.feature.group"/>
-      <requirement
-          name="net.resheim.eclipse.launcher.feature.group"
-          filter="(osgi.os=macosx)"/>
-      <repository
-          url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
       <repository
           url="https://ecd-plugin.github.io/update"/>
-      <repository
-          url="https://resheim.net/p2/eclipse-launcher/"/>
     </setupTask>
     <version
         name="2020-09"
@@ -1496,11 +1474,6 @@
       <requirement
           name="org.sf.feeling.decompiler.procyon.feature.group"/>
       <requirement
-          name="com.eclipserunner.feature.feature.group"/>
-      <requirement
-          name="net.resheim.eclipse.launcher.feature.group"
-          filter="(osgi.os=macosx)"/>
-      <requirement
           name="org.scala-ide.sdt.weaving.feature.feature.group"/>
       <requirement
           name="org.scala-ide.play2.feature.feature.group"/>
@@ -1519,81 +1492,10 @@
       <requirement
           name="org.scala-ide.zinc.feature.feature.group"/>
       <repository
-          url="https://dl.bintray.com/zaunerc/p2/com.eclipserunner.p2_site/latest/"/>
-      <repository
           url="https://ecd-plugin.github.io/update"/>
-      <repository
-          url="https://resheim.net/p2/eclipse-launcher/"/>
       <repository
           url="http://download.scala-ide.org/sdk/lithium/e47/scala212/stable/site"/>
     </setupTask>
-    <version
-        name="2020-06"
-        label="2020-06"
-        requiredJavaVersion="1.8">
-      <setupTask
-          xsi:type="setup.p2:P2Task"
-          label="Eclipse IDE for Java Developers (2020-03)">
-        <requirement
-            name="epp.package.java"
-            versionRange="[4.16.0,5.0.0)"/>
-        <requirement
-            name="org.eclipse.platform.feature.group"
-            versionRange="[4.16.0,5.0.0)"/>
-        <requirement
-            name="org.eclipse.rcp.feature.group"
-            versionRange="[4.16.0,5.0.0)"/>
-        <requirement
-            name="org.eclipse.buildship.feature.group"/>
-        <requirement
-            name="org.eclipse.eclemma.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.egit.feature.group"/>
-        <requirement
-            name="org.eclipse.egit.mylyn.feature.group"/>
-        <requirement
-            name="org.eclipse.epp.mpc.feature.group"/>
-        <requirement
-            name="org.eclipse.jdt.feature.group"/>
-        <requirement
-            name="org.eclipse.jgit.feature.group"/>
-        <requirement
-            name="org.eclipse.m2e.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.m2e.logback.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.mylyn.bugzilla_feature.feature.group"/>
-        <requirement
-            name="org.eclipse.mylyn.context_feature.feature.group"/>
-        <requirement
-            name="org.eclipse.mylyn.git.feature.group"/>
-        <requirement
-            name="org.eclipse.mylyn.hudson.feature.group"/>
-        <requirement
-            name="org.eclipse.mylyn.ide_feature.feature.group"/>
-        <requirement
-            name="org.eclipse.mylyn.java_feature.feature.group"/>
-        <requirement
-            name="org.eclipse.mylyn.wikitext_feature.feature.group"/>
-        <requirement
-            name="org.eclipse.mylyn_feature.feature.group"/>
-        <requirement
-            name="org.eclipse.tips.feature.feature.group"/>
-        <requirement
-            name="org.eclipse.wst.xml_ui.feature.feature.group"/>
-        <requirement
-            name="202001230951.org.eclipse.wb"/>
-        <repository
-            url="http://download.eclipse.org/technology/epp/packages/2020-06"/>
-        <repository
-            url="http://download.eclipse.org/releases/2020-06/202006171000">
-          <annotation
-              source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
-        </repository>
-        <repository
-            url="https://download.eclipse.org/windowbuilder/latest/"/>
-      </setupTask>
-    </version>
     <version
         name="2020-12"
         label="2020-12"
@@ -1712,6 +1614,73 @@
           <annotation
               source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
         </repository>
+      </setupTask>
+    </version>
+    <version
+        name="2020-06"
+        label="2020-06"
+        requiredJavaVersion="1.8">
+      <setupTask
+          xsi:type="setup.p2:P2Task"
+          label="Eclipse IDE for Java Developers (2020-03)">
+        <requirement
+            name="epp.package.java"
+            versionRange="[4.16.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.platform.feature.group"
+            versionRange="[4.16.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.rcp.feature.group"
+            versionRange="[4.16.0,5.0.0)"/>
+        <requirement
+            name="org.eclipse.buildship.feature.group"/>
+        <requirement
+            name="org.eclipse.eclemma.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.egit.feature.group"/>
+        <requirement
+            name="org.eclipse.egit.mylyn.feature.group"/>
+        <requirement
+            name="org.eclipse.epp.mpc.feature.group"/>
+        <requirement
+            name="org.eclipse.jdt.feature.group"/>
+        <requirement
+            name="org.eclipse.jgit.feature.group"/>
+        <requirement
+            name="org.eclipse.m2e.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.m2e.logback.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.bugzilla_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.context_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.git.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.hudson.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.ide_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.java_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn.wikitext_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.mylyn_feature.feature.group"/>
+        <requirement
+            name="org.eclipse.tips.feature.feature.group"/>
+        <requirement
+            name="org.eclipse.wst.xml_ui.feature.feature.group"/>
+        <requirement
+            name="202001230951.org.eclipse.wb"/>
+        <repository
+            url="http://download.eclipse.org/technology/epp/packages/2020-06"/>
+        <repository
+            url="http://download.eclipse.org/releases/2020-06/202006171000">
+          <annotation
+              source="http://www.eclipse.org/oomph/setup/ReleaseTrain"/>
+        </repository>
+        <repository
+            url="https://download.eclipse.org/windowbuilder/latest/"/>
       </setupTask>
     </version>
     <version
