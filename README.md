@@ -15,10 +15,20 @@ Open the eclipse_inst.ini file being part of the Eclipse Installer (on MacOS it 
 -Doomph.redirection.setups=index:/->https://git.minres.com/Tooling/oomph-setups/raw/branch/master/
 ```
 
-## Use the MINRES setups temporarily with the eclipse installer
+
+## Use the MINRES setups (temporarily) with the eclipse installer
 
 Run the eclipse installer with additional command line arguments:
 
 ```
 eclipse-inst -vmargs '-Doomph.redirection.setups=index:/->https://git.minres.com/Tooling/oomph-setups/raw/branch/master/'
 ```
+
+or with a local copy of the repo:
+
+```
+mkdir -f $HOME/git
+cd $HOME/git
+git clone https://git.minres.com/Tooling/oomph-setups.git
+eclipse-inst -vmargs '-Doomph.redirection.setups=index:/->file:///'$HOME'/git/oomph-setups/'
+````
