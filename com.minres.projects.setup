@@ -51,7 +51,8 @@
   <project href="projects/RDL-Editor.setup?name='RDL.Editor'#/"/>
   <project href="projects/SCViewer.setup?name='SCViewer'#/"/>
   <project href="projects/SystemC-Quickstart.setup?name='systemc.quickstart'#/"/>
-  <project href="projects/JIT-ISS-CoreDsl.setup?name='CoreDsl'#/"/>
+  <project href="projects/CoreDsl2.setup?name='CoreDsl2'#/"/>
+  <project href="projects/CoreDsl2-Generator.setup?name='CoreDsl2-Generator'#/"/>
   <project href="projects/Mendel.setup?name='Mendel'#/"/>
   <project href="projects/Structural.setup?name='Structural'#/"/>
   <description>MINRES provided cool projects.</description>
